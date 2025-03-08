@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom"
 function App() {
 
   return (
-    <div className="md:flex justify-center items-center h-screen w-full">
+    <div className="md:flex justify-center items-center h-screen w-full overflow-y-visible">
       <Routes>
         <Route index path="/" element={<></>} />
         <Route index path="/events" element={<></>} />
