@@ -1,17 +1,23 @@
-
+import PrizePool from "../sections/PrizePool"
+import Aboutus from "../sections/Aboutus"
+import HeroSection from "../sections/HeroSection"
+import Sponsors from "../sections/Sponsors"
+import Footer from "../sections/Footer"
 
 export default function LandingPage() {
-
     return (
-        <div className="h-full w-full bg-black"
+        <div className="h-full w-full bg-black space-y-10 sm:space-y-16 md:space-y-24"
             style={{
                 backgroundImage: `
-                radial-gradient(circle at 1px 1px, #C4B3FF 0.6px, transparent 0),
-                radial-gradient(circle, rgba(221, 214, 254, 0) 0%, rgba(221, 214, 254, 0) 60%, rgba(221, 214, 254, 0.2) 90%)
+                radial-gradient(circle at 1px 1px, #00FF00 1px, transparent 0)
                 `,
-                backgroundSize: "10px 10px, cover",
+                backgroundSize: "20px 20px",
             }}>
-
+            <HeroSection />
+            <Aboutus />
+            <PrizePool />
+            <Sponsors />
+            <Footer />
         </div>
     )
 }
