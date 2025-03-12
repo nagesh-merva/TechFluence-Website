@@ -5,6 +5,7 @@ import { HyperText } from "@/components/magicui/hyper-text"
 
 export default function EventsHeroSection() {
     const [activeIndex, setActiveIndex] = useState(0)
+    const [showNavbar, setShowNavbar] = useState(false)
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -16,6 +17,7 @@ export default function EventsHeroSection() {
 
     return (
         <div className="relative w-full h-svh bg-black overflow-hidden">
+            {showNavbar && <RetroNavbar onClose={() => setShowNavbar(false)} />}
             <CRTOverlay />
             <div className="absolute -left-28 -top-28 h-44 w-44 bg-black rotate-45"></div>
             <div className="absolute -right-28 -top-28 h-44 w-44 bg-black -rotate-45"></div>
@@ -27,18 +29,18 @@ export default function EventsHeroSection() {
                 <h1 className="px-5 py-1 text-creamy text-[10px] bg-amber-900 rounded-b-2xl font-semibold font-space-mono tracking-wider text-center">[Activate Your Brain]</h1>
             </div>
             <div className="m-5">
-                <img src="/events/TechfluenceBg.webp" alt="main-image" className="w-full h-svh object-cover" />
+                <img src="/events/EventsBG.png" alt="main-image" className="w-full h-svh object-cover" />
             </div>
             <div className="z-20 p-10 sm:p-10 md:p-16 lg:p-20 absolute inset-0 h-full w-full flex flex-col">
                 <div className="mt-5 h-fit w-fit px-3 sm:px-4 py-1 sm:pt-2 bg-creamy/20 border border-creamy">
                     <span className="text-xs sm:text-sm md:text-md text-creamy font-semibold font-space-mono tracking-wider text-center">DATE : 27 - 28 March 2025</span>
                 </div>
                 <div className="w-full md:w-auto self-center md:self-start mt-4 sm:mt-10 md:mt-5 lg:mt-6">
-                    <h1 className="text-7xl sm:text-8xl md:text-9xl text-creamy font-normal font-big-noodle tracking-tight text-center md:text-left">
-                        <HyperText className="inherit">TECHFLUENCE</HyperText>
+                    <h1 className="text-7xl sm:text-8xl uppercase md:text-9xl text-creamy font-normal font-big-noodle tracking-tight text-center md:text-left">
+                        <HyperText className="inherit">NEON NEXUS </HyperText>
                         <br className="hidden md:block" /><span className="md:hidden"> </span>
-                        <span className="md:block">
-                            <HyperText className="inherit">2025</HyperText>
+                        <span className="md:block text-5xl sm:text-6xl md:text-7xl">
+                            <HyperText className="inherit">the ultimate arena</HyperText>
                         </span>
                     </h1>
                 </div>
@@ -59,7 +61,9 @@ export default function EventsHeroSection() {
                             />
                         </div>
                         <p className="pt-2 text-sm sm:text-base md:text-lg text-creamy font-semibold font-sans tracking-wider text-left leading-5 sm:leading-6">
-                            Techfluence is a celebration of cultures and technology, not just as an institution, but as a country. It aims at instilling a sense of belongingness by being a melting pot of ideas open to students of all disciplines. With intriguing events and competitions along with resourceful workshops by experts and professionals
+                            Welcome to Techfluence, a world where the line between reality and digital warfare blurs. This is not just an event—it’s an adventure, a challenge, a test of skill and survival.
+
+                            From the moment you step into this realm, you are no longer just an observer. You are a navigator, thrown into an unpredictable world teeming with challenges, enemies lurking in the shadows, and obstacles designed to push you beyond your limits.
                         </p>
                     </div>
 

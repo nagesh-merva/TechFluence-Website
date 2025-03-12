@@ -29,7 +29,7 @@ const Footer = () => {
                 ))}
             </div>
             <BorderBeam duration={8} size={100} />
-            <div className="py-12 px-6 md:px-12">
+            <div className="py-12 px-6 md:px-12 pb-4">
                 <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
                     <div className="flex flex-col items-center md:items-start space-y-4">
                         <div className={`relative ${glitchActive ? 'animate-pulse' : ''}`}>
@@ -120,15 +120,15 @@ const Footer = () => {
                         </Button>
                     </div>
                 </div>
-                <div className="mt-12 pt-6 border-t border-creamy/20 flex flex-col md:flex-row justify-between items-center text-creamy/50 text-xs font-space-mono">
+                <div className="mt-10 pt-2 border-t border-creamy/20 flex flex-col md:flex-row justify-between items-center text-creamy/50 text-xs font-space-mono">
                     <div className="mb-4 md:mb-0">
                         <span className="inline-block">{"<"}</span>
                         <span className="inline-block ml-1 mr-1">© TECHFLUENCE_2025</span>
                         <span className="inline-block">{"/>"}</span>
                     </div>
-                    <div className="flex space-x-6">
-                        <a href="/privacy" className="hover:text-creamy transition-colors duration-200">PRIVACY_POLICY</a>
-                        <a href="/terms" className="hover:text-creamy transition-colors duration-200">TERMS_OF_SERVICE</a>
+                    <div className="flex space-x-6 ">
+                        <p className="hover:text-creamy transition-colors duration-200">INTENSA</p>
+                        <p className="hover:text-creamy transition-colors duration-200">#pikky pikky lighty</p>
                     </div>
                 </div>
             </div>
