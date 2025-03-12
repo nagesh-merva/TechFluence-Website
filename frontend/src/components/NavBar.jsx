@@ -47,7 +47,7 @@ const Navbar = () => {
                     {links.map((item, index) => (
                         <button
                             key={index}
-                            onClick={() => handleNavigation(`/${item.link}`)}
+                            onClick={() => handleNavigation(`${item.link}`)}
                             className="font-['Press_Start_2P'] text-lg tracking-wide hover:text-gray-600"
                         >
                             {item.text}
