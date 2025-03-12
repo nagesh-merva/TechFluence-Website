@@ -86,7 +86,7 @@ export default function OfflineEvents() {
     }
 
     const x = useTransform(scrollYProgress, [0, 1], ["0%", calculateEndTransform()])
-    const smoothX = useSpring(x, { stiffness: 80, damping: 20 })
+    const smoothX = useSpring(x, { stiffness: 50, damping: 30 })
 
     useEffect(() => {
         const handleResize = () => {
@@ -138,7 +138,7 @@ export default function OfflineEvents() {
                 </div>
                 <motion.div
                     style={{ x: smoothX }}
-                    className="flex items-center h-full gap-6 md:gap-12 w-[500vw] sm:w-[400vw] md:w-[350vw] lg:w-[300vw] xl:w-[280vw]"
+                    className="flex items-center h-full gap-6 md:gap-32 w-[500vw] sm:w-[400vw] md:w-[350vw] lg:w-[300vw] xl:w-[280vw]"
                 >
                     <div className="flex flex-col items-center justify-center min-w-screen h-full px-6">
                         <h4 className="text-sm md:text-md text-creamy font-semibold font-space-mono tracking-wider text-center">// Offline Events </h4>
