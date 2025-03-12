@@ -86,7 +86,7 @@ export default function GamingEvents() {
     }
 
     const x = useTransform(scrollYProgress, [0, 1], ["0%", calculateEndTransform()])
-    const smoothX = useSpring(x, { stiffness: 80, damping: 20 })
+    const smoothX = useSpring(x, { stiffness: 50, damping: 30 })
 
     useEffect(() => {
         const handleResize = () => {
@@ -121,7 +121,7 @@ export default function GamingEvents() {
     }, [isScrollingAllowed])
 
     return (
-        <section ref={containerRef} className="relative h-[400vh] bg-black mt-32">
+        <section ref={containerRef} className="relative h-[700vh] bg-black mt-32">
             <div className="sticky top-0 h-screen overflow-hidden">
                 <div className="absolute inset-0 -z-0">
                     <AnimatedGridPattern
