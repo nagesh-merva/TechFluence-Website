@@ -3,6 +3,7 @@ import EventsHeroSection from "../sections/Events/EventsHero"
 import OfflineEvents from "../sections/Events/OfflineEvents"
 import OnlineEvents from "@/sections/Events/OnlineEvents"
 import GamingEvents from "@/sections/Events/GamingEvent"
+import Footer from "@/sections/Footer"
 
 export default function EventsPage() {
 
@@ -12,6 +13,7 @@ export default function EventsPage() {
             <OfflineEvents />
             <OnlineEvents />
             <GamingEvents />
+            <Footer />
         </div>
     )
 }
