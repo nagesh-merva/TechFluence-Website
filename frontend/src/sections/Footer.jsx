@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
-import { Instagram, Linkedin, Calendar, ShoppingBag, Ticket } from 'lucide-react'
+import { Instagram, Linkedin, Calendar, ShoppingBag, Ticket, Home } from 'lucide-react'
 import { HyperText } from "@/components/magicui/hyper-text";
 import { BorderBeam } from "@/components/magicui/border-beam"
 import { Button } from "@/components/ui/button"
@@ -19,15 +19,15 @@ const Footer = () => {
 
     return (
         <footer className="w-full sm:h-[320px] relative bg-black border-t border-creamy/30 overflow-hidden">
-            {/* <div className="absolute inset-0 pointer-events-none opacity-10">
-                {Array.from({ length: 50 }).map((_, i) => (
+            <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
+                {Array.from({ length: 250 }).map((_, i) => (
                     <div
                         key={i}
-                        className="h-px w-full bg-creamy"
-                        style={{ top: `${i * 2}%` }}
+                        className="absolute h-px w-full bg-creamy/10"
+                        style={{ top: `${i * 4}px` }}
                     />
                 ))}
-            </div> */}
+            </div>
             <BorderBeam duration={8} size={100} />
             <div className="py-12 px-6 md:px-12">
                 <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
@@ -64,6 +64,13 @@ const Footer = () => {
                             NAVIGATE_SYSTEM
                         </HyperText>
                         <nav className="grid grid-cols-1 gap-3">
+                            <a
+                                href="/"
+                                className="flex items-center space-x-2 text-creamy/80 hover:text-creamy transition-colors duration-200"
+                            >
+                                <Home size={16} />
+                                <span className="font-space-mono">HOME</span>
+                            </a>
                             <a
                                 href="/events"
                                 className="flex items-center space-x-2 text-creamy/80 hover:text-creamy transition-colors duration-200"
