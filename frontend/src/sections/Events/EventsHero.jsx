@@ -15,13 +15,13 @@ export default function EventsHeroSection() {
                 <h1 className="px-5 py-1 text-creamy text-[10px] bg-amber-900 rounded-b-2xl font-semibold font-space-mono tracking-wider text-center">[Activate Your Brain]</h1>
             </div>
             <div className="m-5">
-                <img src="/main/mainImage.png" alt="main-image" className="w-full h-svh object-cover" />
+                <img src="/events/TechfluenceBg.webp" alt="main-image" className="w-full h-svh object-cover" />
             </div>
             <div className="z-20 p-10 sm:p-10 md:p-16 lg:p-20 absolute inset-0 h-full w-full flex flex-col">
                 <div className="mt-5 h-fit w-fit px-3 sm:px-4 py-1 sm:py-2 bg-creamy/20 border border-creamy">
                     <span className="text-xs sm:text-sm md:text-md text-creamy font-semibold font-space-mono tracking-wider text-center">DATE : 27 - 28 March 2025</span>
                 </div>
-                <div className="w-full md:w-auto self-center md:self-start mt-4 sm:mt-10 md:mt-16 lg:mt-20">
+                <div className="w-full md:w-auto self-center md:self-start mt-4 sm:mt-10 md:mt-5 lg:mt-6">
                     <h1 className="text-7xl sm:text-8xl md:text-9xl text-creamy font-normal font-big-noodle tracking-tighter text-center md:text-left">
                         TECHFLUENCE<br className="hidden md:block" /><span className="md:hidden"> </span>
                         <span className="md:block">2025</span>
