@@ -3,7 +3,6 @@ import Aboutus from "../sections/Aboutus"
 import HeroSection from "../sections/HeroSection"
 import Sponsors from "../sections/Sponsors"
 import Footer from "../sections/Footer"
-import ScrollToTop from "@/components/ScrollToTop"
 import { useEffect } from "react"
 
 export default function LandingPage() {
@@ -21,7 +20,6 @@ export default function LandingPage() {
                 `,
                 backgroundSize: "20px 20px",
             }}>
-            <ScrollToTop />
             <HeroSection />
             <Aboutus />
             <PrizePool />
