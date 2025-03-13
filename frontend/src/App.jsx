@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import LandingPage from "./pages/LandingPage";
 import EventsPage from "./pages/EventsPage";
 import CyberpunkLoader from "./sections/Events/CyberpunkLoader";
+import ResultsPage from "./pages/ResultsPage";
 
 function App() {
   const [loading, setLoading] = useState(true);

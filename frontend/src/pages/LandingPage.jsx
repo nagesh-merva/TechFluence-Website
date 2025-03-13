@@ -3,6 +3,7 @@ import Aboutus from "../sections/Aboutus";
 import HeroSection from "../sections/HeroSection";
 import Sponsors from "../sections/Sponsors";
 import Footer from "../sections/Footer";
+import { useLocation } from "react-router-dom";
 
 import { useEffect } from "react";
 

@@ -1,14 +1,14 @@
-"use client";;
+"use client";
 import { cn } from "@/lib/utils";
 import { motion } from "motion/react";
 
 export const BorderBeam = ({
   className,
-  size = 100, // Increased size from 50 to 100
+  size = 50,
   delay = 0,
-  duration = 36,
-  colorFrom = "#FFD700", // Rich Gold
-  colorTo = "#FFB800", // Deep Gold
+  duration = 6,
+  colorFrom = "#ffaa40",
+  colorTo = "#9c40ff",
   transition,
   style,
   reverse = false,
@@ -18,13 +18,12 @@ export const BorderBeam = ({
     <div className="pointer-events-none absolute inset-0 rounded-[inherit] border border-transparent [mask-clip:padding-box,border-box] [mask-composite:intersect] [mask-image:linear-gradient(transparent,transparent),linear-gradient(#000,#000)]">
       <motion.div
         className={cn(
-          "absolute",
+          "absolute aspect-square",
           "bg-gradient-to-l from-[var(--color-from)] via-[var(--color-to)] to-transparent",
           className
         )}
         style={{
-          width: size * 2, // Doubled the width
-          height: size, // Increased height
+          width: size,
           offsetPath: `rect(0 auto auto 0 round ${size}px)`,
           "--color-from": colorFrom,
           "--color-to": colorTo,
@@ -42,7 +41,8 @@ export const BorderBeam = ({
           duration,
           delay: -delay,
           ...transition,
-        }} />
-    </div>)
+        }}
+      />
+    </div>
   );
 };
