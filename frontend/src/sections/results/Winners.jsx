@@ -11,19 +11,41 @@ export default function Winners() {
         {
             name: "NEON ODYSSEY",
             description: "NAVIGATE THROUGH DIGITAL LABYRINTHS IN THIS IMMERSIVE REALITY CHALLENGE.",
+            image: "/events/offlineEvents.png",
             winners: [
-                { id: "001", name: "ARIA NOVA", prize: "₹12,000", image: "/events/offlineEvents.png" },
-                { id: "002", name: "ZION FLUX", prize: "₹8,000", image: "/events/offlineEvents.png" },
-                { id: "003", name: "ECHO PRIME", prize: "₹4,000", image: "/events/offlineEvents.png" }
+                { id: "001", name: "ARIA NOVA", prize: "₹12,000" },
+                { id: "002", name: "ZION FLUX", prize: "₹8,000" },
+                { id: "003", name: "ECHO PRIME", prize: "₹4,000" }
             ],
         },
         {
             name: "CYBER PULSE",
             description: "MASTER THE CODE AND CONQUER THE VIRTUAL REALMS IN THIS ADVANCED TECH COMPETITION.",
+            image: "/events/offlineEvents.png",
             winners: [
-                { id: "101", name: "NOVA BYTE", prize: "₹15,000", image: "/events/offlineEvents.png" },
-                { id: "102", name: "PIXEL STORM", prize: "₹10,000", image: "/events/offlineEvents.png" },
-                { id: "103", name: "QUANTUM LINK", prize: "₹5,000", image: "/events/offlineEvents.png" }
+                { id: "101", name: "NOVA BYTE", prize: "₹15,000" },
+                { id: "102", name: "PIXEL STORM", prize: "₹10,000" },
+                { id: "103", name: "QUANTUM LINK", prize: "₹5,000" }
+            ],
+        },
+        {
+            name: "NEON ODYSSEY",
+            description: "NAVIGATE THROUGH DIGITAL LABYRINTHS IN THIS IMMERSIVE REALITY CHALLENGE.",
+            image: "/events/offlineEvents.png",
+            winners: [
+                { id: "001", name: "ARIA NOVA", prize: "₹12,000" },
+                { id: "002", name: "ZION FLUX", prize: "₹8,000" },
+                { id: "003", name: "ECHO PRIME", prize: "₹4,000" }
+            ],
+        },
+        {
+            name: "CYBER PULSE",
+            description: "MASTER THE CODE AND CONQUER THE VIRTUAL REALMS IN THIS ADVANCED TECH COMPETITION.",
+            image: "/events/offlineEvents.png",
+            winners: [
+                { id: "101", name: "NOVA BYTE", prize: "₹15,000" },
+                { id: "102", name: "PIXEL STORM", prize: "₹10,000" },
+                { id: "103", name: "QUANTUM LINK", prize: "₹5,000" }
             ],
         },
     ]
@@ -70,12 +92,36 @@ export default function Winners() {
                 />
             </div>
             <div className="relative flex flex-col w-full min-h-svh">
-                <div className="sticky top-0 z-30 w-full py-12 flex justify-center items-center backdrop-blur-md bg-gradient-to-b from-black to-black/20">
+                <div className="sticky top-0 z-30 w-full py-12 flex justify-center items-center backdrop-blur-md bg-gradient-to-b from-black to-transparent">
                     <h1 className="pointer-events-none whitespace-pre-wrap bg-gradient-to-br from-white via-gray-400/85 to-gray-300/80 bg-clip-text text-center text-6xl md:text-8xl font-semibold leading-none text-transparent">
                         Offline Events
                     </h1>
                 </div>
-                <div className="relative z-20 pt-24 pb-32">
+                <div className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 z-20 pt-24 pb-32">
+                    {events.map((eventData, index) => (
+                        <WinnerAnnouncement key={index} eventData={eventData} />
+                    ))}
+                </div>
+            </div>
+            <div className="relative flex flex-col w-full min-h-svh">
+                <div className="sticky top-0 z-30 w-full h-fit py-12 flex justify-center items-center">
+                    <h1 className="pointer-events-none whitespace-pre-wrap bg-gradient-to-br from-white via-gray-400/85 to-gray-300/80 bg-clip-text text-center text-6xl md:text-8xl font-semibold leading-none text-transparent">
+                        Gaming Events
+                    </h1>
+                </div>
+                <div className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 z-20 pt-24 pb-32">
+                    {events.map((eventData, index) => (
+                        <WinnerAnnouncement key={index} eventData={eventData} />
+                    ))}
+                </div>
+            </div>
+            <div className="relative flex flex-col w-full min-h-svh">
+                <div className="sticky top-0 z-30 w-full py-12 flex justify-center items-center ">
+                    <h1 className="pointer-events-none whitespace-pre-wrap bg-gradient-to-br from-white via-gray-400/85 to-gray-300/80 bg-clip-text text-center text-6xl md:text-8xl font-semibold leading-none text-transparent">
+                        Online Events
+                    </h1>
+                </div>
+                <div className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 z-20 pt-24 pb-32">
                     {events.map((eventData, index) => (
                         <WinnerAnnouncement key={index} eventData={eventData} />
                     ))}

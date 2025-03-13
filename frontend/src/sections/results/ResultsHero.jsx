@@ -1,5 +1,6 @@
 import { HyperText } from "@/components/magicui/hyper-text"
 import RetroNavbar from "@/components/RetroNavbar"
+import { ChevronLeft } from "lucide-react"
 import React, { useState, useEffect } from "react"
 
 export default function ResultsHero() {
@@ -15,7 +16,7 @@ export default function ResultsHero() {
 
     return (
         <div className="w-full h-svh bg-black z-50">
-            {showNavbar && <RetroNavbar onClose={() => setShowNavbar(false)} />}
+            {showNavbar && <RetroNavbar isOpen={showNavbar} onClose={() => setShowNavbar(false)} />}
 
             <button
                 onClick={() => setShowNavbar(!showNavbar)}
@@ -56,7 +57,44 @@ export default function ResultsHero() {
                             </span>
                         </h1>
                     </div>
+                    <div className="flex flex-col md:flex-row justify-between mt-auto gap-6">
+                        <div className="mt-4 sm:mt-6 md:mt-10 lg:mt-16 max-w-full md:max-w-[60%]">
+                            <div className="flex space-x-1">
+                                <div
+                                    className={`h-4 sm:h-5 w-1 sm:w-2 border ${activeIndex === 0 ? 'bg-creamy' : 'bg-transparent'} border-creamy transition-colors duration-300`}
+                                />
+                                <div
+                                    className={`h-4 sm:h-5 w-1 sm:w-2 border ${activeIndex === 1 ? 'bg-creamy' : 'bg-transparent'} border-creamy transition-colors duration-300`}
+                                />
+                                <div
+                                    className={`h-4 sm:h-5 w-1 sm:w-2 border ${activeIndex === 2 ? 'bg-creamy' : 'bg-transparent'} border-creamy transition-colors duration-300`}
+                                />
+                                <div
+                                    className={`h-4 sm:h-5 w-4 sm:w-8 border ${activeIndex === 3 ? 'bg-creamy' : 'bg-transparent'} border-creamy transition-colors duration-300`}
+                                />
+                            </div>
+                            <p className="pt-2 text-sm sm:text-base md:text-lg text-creamy font-semibold font-sans tracking-wider text-left leading-5 sm:leading-6">
+                                The battle has raged, the challenges have been conquered, and now, only the strongest remain. Through fire and fury, they have emerged—the sole survivors of the ultimate arena. Blood, sweat, and strategy have defined their path, but now, they claim their rightful place among legends. The war is over. The victors rise.
+                            </p>
+                        </div>
+
+                        <div className="relative h-fit w-full md:w-fit p-3 sm:p-4 md:p-5 text-creamy bg-creamy/20 border border-creamy flex flex-col md:place-self-end">
+                            <ChevronLeft className="absolute -top-4 -left-4 text-xl text-creamy rotate-45" />
+                            <ChevronLeft className="absolute -bottom-4 -left-4 text-xl text-creamy -rotate-45" />
+                            <ChevronLeft className="absolute -top-4 -right-4 text-xl text-creamy rotate-135" />
+                            <ChevronLeft className="absolute -bottom-4 -right-4 text-xl text-creamy -rotate-135" />
+                            <HyperText className="text-xs sm:text-sm md:text-md font-semibold font-space-mono tracking-wider text-left">// NEON NEXUS: THE FINAL STAND</HyperText>
+                            <HyperText className="text-xs sm:text-sm md:text-md font-semibold font-space-mono tracking-wider text-left">VICTORY_MODE = ACTIVATED;</HyperText>
+                            <HyperText className="text-xs sm:text-sm md:text-md font-semibold font-space-mono tracking-wider text-left">IF SURVIVAL_REACHED (</HyperText>
+                            <HyperText className="text-xs sm:text-sm md:text-md font-semibold font-space-mono tracking-wider text-left">CROWN_CHAMPIONS();</HyperText>
+                            <HyperText className="text-xs sm:text-sm md:text-md font-semibold font-space-mono tracking-wider text-left">ELSE (</HyperText>
+                            <HyperText className="text-xs sm:text-sm md:text-md font-semibold font-space-mono tracking-wider text-left">EXIT_SIMULATION();</HyperText>
+                            <HyperText className="text-xs sm:text-sm md:text-md font-semibold font-space-mono tracking-wider text-left">{"}"}</HyperText>
+                        </div>
+                    </div>
+
                 </div>
+
             </div>
         </div>
     )
