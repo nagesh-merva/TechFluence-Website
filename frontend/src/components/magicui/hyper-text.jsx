@@ -3,8 +3,10 @@ import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 
-const DEFAULT_CHARACTER_SET = Object.freeze("ABCDEFGHIJKLMNOPQRSTUVWXYZ".split(""));
-const getRandomInt = max => Math.floor(Math.random() * max);
+const DEFAULT_CHARACTER_SET = Object.freeze(
+  "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
+);
+const getRandomInt = (max) => Math.floor(Math.random() * max);
 
 export function HyperText({
   children,
@@ -17,7 +19,9 @@ export function HyperText({
   characterSet = DEFAULT_CHARACTER_SET,
   ...props
 }) {
-  const MotionComponent = motion.create(Component, { forwardMotionProps: true });
+  const MotionComponent = motion.create(Component, {
+    forwardMotionProps: true,
+  });
   const [displayText, setDisplayText] = useState(() => children.split(""));
   const [isAnimating, setIsAnimating] = useState(false);
   const iterationCount = useRef(0);
@@ -36,12 +40,15 @@ export function HyperText({
       return () => clearTimeout(startTimeout);
     }
 
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => setIsAnimating(true), delay);
-        observer.disconnect();
-      }
-    }, { threshold: 0.1, rootMargin: "-30% 0px -30% 0px" });
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => setIsAnimating(true), delay);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1, rootMargin: "-30% 0px -30% 0px" }
+    );
 
     if (elementRef.current) observer.observe(elementRef.current);
     return () => observer.disconnect();
@@ -55,13 +62,13 @@ export function HyperText({
 
     const interval = setInterval(() => {
       if (iterationCount.current < maxIterations) {
-        setDisplayText(currentText =>
+        setDisplayText((currentText) =>
           currentText.map((letter, index) =>
             letter === " "
               ? letter
               : index <= iterationCount.current
-                ? children[index]
-                : characterSet[getRandomInt(characterSet.length)]
+              ? children[index]
+              : characterSet[getRandomInt(characterSet.length)]
           )
         );
         iterationCount.current = iterationCount.current + 0.1;

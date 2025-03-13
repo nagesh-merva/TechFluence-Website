@@ -8,11 +8,11 @@ import { useLocation } from "react-router-dom"
 
 
 export default function EventsPage() {
-    const { pathname } = useLocation()
+    const { pathname } = useLocation();
 
     useEffect(() => {
-        window.scrollTo(0, 0)
-    }, [pathname])
+        window.scrollTo(0, 0);
+    }, [pathname]);
 
     return (
         <div className="w-full h-full bg-black">
@@ -22,5 +22,5 @@ export default function EventsPage() {
             <GamingEvents />
             <Footer />
         </div>
-    )
+    );
 }
