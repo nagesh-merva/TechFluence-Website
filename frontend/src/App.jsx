@@ -25,10 +25,10 @@ function App() {
     <div className="h-full w-full">
       <Routes>
         <Route index path="/" element={<LandingPage />} />
-        <Route path="/events" element={<EventsPage />} />
-        <Route path="/results" element={<></>} />
-        <Route path="/aboutus" element={<></>} />
-        <Route path="/gallery" element={<></>} />
+        <Route index path="/events" element={<EventsPage />} />
+        <Route index path="/results" element={<ResultsPage />} />
+        <Route index path="/aboutus" element={<></>} />
+        <Route index path="/gallery" element={<></>} />
       </Routes>
     </div>
   );

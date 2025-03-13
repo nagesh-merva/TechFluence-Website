@@ -139,7 +139,7 @@ export default function OnlineEvents() {
                 </div>
                 <motion.div
                     style={{ x: smoothX }}
-                    className="flex items-center h-full gap-6 md:gap-12 w-[500vw] sm:w-[400vw] md:w-[350vw] lg:w-[300vw] xl:w-[280vw]"
+                    className="flex items-center h-full gap-6 md:gap-32 w-[500vw] sm:w-[400vw] md:w-[350vw] lg:w-[300vw] xl:w-[280vw]"
                 >
                     {events.map((event, index) => (
                         <div key={event.id} className="flex flex-col md:flex-row items-center gap-4 md:gap-6">

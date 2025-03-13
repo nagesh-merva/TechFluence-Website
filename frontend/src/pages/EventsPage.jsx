@@ -1,10 +1,17 @@
-import React from "react"
+import React, { useEffect } from "react"
 import EventsHeroSection from "../sections/Events/EventsHero"
 import OfflineEvents from "../sections/Events/OfflineEvents"
 import OnlineEvents from "@/sections/Events/OnlineEvents"
 import GamingEvents from "@/sections/Events/GamingEvent"
+import Footer from "@/sections/Footer"
+import ScrollToTop from "@/components/ScrollToTop"
 
 export default function EventsPage() {
+    const { pathname } = useLocation()
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [pathname])
 
     return (
         <div className="w-full h-full bg-black">
@@ -12,6 +19,7 @@ export default function EventsPage() {
             <OfflineEvents />
             <OnlineEvents />
             <GamingEvents />
+            <Footer />
         </div>
     )
 }

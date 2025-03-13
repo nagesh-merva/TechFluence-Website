@@ -1,4 +1,4 @@
-"use client";
+"use client";;
 import { cn } from "@/lib/utils";
 import { motion } from "motion/react";
 
@@ -42,8 +42,7 @@ export const BorderBeam = ({
           duration,
           delay: -delay,
           ...transition,
-        }}
-      />
-    </div>
+        }} />
+    </div>)
   );
 };
