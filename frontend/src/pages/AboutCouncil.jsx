@@ -2,6 +2,7 @@ import React from "react";
 import CouncilHero from "@/sections/AboutCouncil/CouncilHero";
 import CouncilMembers from "@/sections/AboutCouncil/CouncilMembers";
 import WebsiteTeam from "@/sections/AboutCouncil/WebsiteTeam";
+import Footer from "@/sections/Footer";
 
 const AboutCouncil = () => {
   return (
@@ -9,6 +10,7 @@ const AboutCouncil = () => {
       <CouncilHero />
       <CouncilMembers />
       <WebsiteTeam />
+      <Footer />
     </div>
   );
 };
