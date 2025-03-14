@@ -76,24 +76,25 @@ const CouncilMembers = () => {
       designation: "TE Executive",
     },
     {
-      img: "/images/members/alex-chen.jpg",
-      name: "Alex Chen",
-      designation: "Security Expert",
+      img: "/events/Aditya.jpg",
+      name: "Aditiya Vernekar",
+      designation: "SE Executive",
     },
     {
-      img: "/images/members/hannah-clarke.jpg",
-      name: "Hannah Clarke",
-      designation: "Ecosystem Developer",
+      img: "/events/Noel.jpeg",
+      name: "Noel D'Costa",
+      designation: "SE Executive",
+    },
+
+    {
+      img: "/events/Priyam.jpg",
+      name: "Priyam Redkar",
+      designation: "FE Executive",
     },
     {
-      img: "/images/members/marcus-bennett.jpg",
-      name: "Marcus Bennett",
-      designation: "Token Economist",
-    },
-    {
-      img: "/images/members/victoria-lopez.jpg",
-      name: "Victoria Lopez",
-      designation: "Marketing Director",
+      img: "/events/Goraksh.jpeg",
+      name: "Goraksh Rasaikar",
+      designation: "FE Executive",
     },
   ];
 
