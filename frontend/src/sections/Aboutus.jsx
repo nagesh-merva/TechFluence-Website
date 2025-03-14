@@ -24,13 +24,13 @@ export default function Aboutus() {
       </div>
 
       {/* Content Container */}
-      <div className="relative z-10 w-full flex flex-col md:flex-row items-center md:items-start px-4 sm:px-6 md:px-10 gap-10">
-        {/* Left Side - Image */}
-        <div className="w-full md:w-5/12 flex justify-center md:justify-start">
+      <div className="relative z-10 w-full h-fit flex flex-col md:flex-row items-center px-4 sm:px-6 md:px-10 gap-10">
+        /* Left Side - Image */
+        <div className="w-full h-full md:w-3/8 flex justify-center items-center ">
           <img
-            src="/events/TechfluenceLogo.png"
+            src="/main/logo.gif"
             alt="Techfluence Visual"
-            className="w-10/12 sm:w-8/12 md:w-full rounded-2xl object-cover"
+            className="h-full w-full rounded-2xl object-contain"
           />
         </div>
 

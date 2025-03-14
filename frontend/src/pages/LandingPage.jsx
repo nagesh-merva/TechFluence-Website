@@ -5,8 +5,9 @@ import Sponsors from "../sections/Sponsors";
 import Footer from "../sections/Footer";
 import { useLocation } from "react-router-dom";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import ScrollVideoSection from "@/sections/Events/ScrollVideoSection";
+import CyberpunkLoader from "@/sections/Events/CyberpunkLoader";
 
 export default function LandingPage() {
     const { pathname } = useLocation()

@@ -52,13 +52,13 @@ export default function ResultsHero() {
                         className="w-full h-full object-cover"
                     />
                 </div>
-                <div className="z-20 p-10 sm:p-10 md:p-16 lg:p-20 absolute inset-0 h-full w-full flex flex-col">
+                <div className="z-20 p-10 sm:p-10 md:p-16 lg:p-20 absolute inset-0 h-full w-full flex flex-col items-center md:items-start">
                     <div className="mt-5 h-fit w-fit px-3 sm:px-4 py-1 sm:pt-2 bg-creamy/20 border border-creamy">
                         <span className="text-xs sm:text-sm md:text-md text-creamy font-semibold font-space-mono tracking-wider text-center">
                             DATE : 27 - 28 March 2025
                         </span>
                     </div>
-                    <div className="w-full md:w-auto self-center md:self-start mt-4 sm:mt-10 md:mt-5 lg:mt-6">
+                    <div className="w-full md:w-auto self-center md:self-start mt-8 sm:mt-10 md:mt-5 lg:mt-6">
                         <h1 className="text-7xl sm:text-8xl uppercase md:text-9xl text-creamy font-normal font-big-noodle tracking-tight text-center md:text-left">
                             <HyperText className="inherit">NEON NEXUS </HyperText>
                             <br className="hidden md:block" /><span className="md:hidden"> </span>

@@ -40,11 +40,13 @@ const RetroNavbar = ({ isOpen, onClose }) => {
     const playNavSound = (type) => {
         console.log(`Playing sound: ${type}`)
         const audio = new Audio()
-        audio.volume = 0.6
+        audio.volume = 0.3
 
         switch (type) {
             case 'hover':
-                audio.src = '/sounds/hover.mp3'
+                setTimeout(() => {
+                    audio.src = '/sounds/hover.mp3'
+                }, 1000)
                 break
             case 'select':
                 audio.src = '/sounds/select.mp3'

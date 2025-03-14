@@ -111,30 +111,27 @@ const ScrollVideoSection = () => {
   };
 
   return (
-    <section className="relative h-screen w-full" id="event-video-section">
+    <section className="relative h-auto sm:h-screen w-full" id="event-video-section">
       {/* This is the trigger section that will be replaced by the video */}
       {!isFullyShown && (
         <div
           ref={sectionRef}
-          className={`h-screen w-full flex items-center justify-center bg-gradient-to-b from-black to-zinc-900 ${
-            isVideoActive ? "opacity-0" : "opacity-100"
-          } transition-opacity duration-500`}
+          className={`h-screen w-full flex items-center justify-center bg-gradient-to-b from-black to-zinc-900 ${isVideoActive ? "opacity-0" : "opacity-100"
+            } transition-opacity duration-500`}
         ></div>
       )}
       {/* Video section that starts fixed and stays fixed until user scrolls */}
       <div
-        className={`${
-          isFullyShown ? "relative" : "fixed inset-0"
-        } bg-black z-50 h-screen w-full transition-transform duration-700 ${
-          isVideoActive ? "translate-y-0" : "translate-y-full"
-        }`}
+        className={`${isFullyShown ? "relative" : "fixed inset-0"
+          } bg-black z-50 h-auto sm:h-screen w-full transition-transform duration-700 ${isVideoActive ? "translate-y-0" : "translate-y-full"
+          }`}
       >
         {/* Container for rotation to ensure all content rotates together */}
-        <div className="relative w-full h-full transform rotate-0 sm:rotate-180 md:rotate-0">
+        <div className="relative w-full h-fit sm:h-full transform rotate-0 sm:rotate-180 md:rotate-0">
           {/* Video element */}
           <video
             ref={videoRef}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-contain sm:object-cover  aspect-video"
             src="/events/TestVideo.mp4"
             poster="/events/TechfluenceLogo.png"
             playsInline
@@ -147,7 +144,12 @@ const ScrollVideoSection = () => {
             <>
               {/* Semi-transparent overlay for better button visibility */}
               <div className="absolute inset-0 bg-black bg-opacity-40 z-20"></div>
-
+              {/* Full size image overlay for vertical video */}
+              <img
+                src="/events/BG12.png"
+                alt="Video preview"
+                className="absolute inset-0 w-full h-full object-cover z-20 "
+              />
               {/* Full size image overlay */}
               <img
                 src="/events/BG12.png"
