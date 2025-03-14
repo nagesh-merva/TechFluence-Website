@@ -1,11 +1,12 @@
-import PrizePool from "../sections/PrizePool"
-import Aboutus from "../sections/Aboutus"
-import HeroSection from "../sections/HeroSection"
-import Sponsors from "../sections/Sponsors"
-import Footer from "../sections/Footer"
-import CyberpunkLoader from "../sections/Events/CyberpunkLoader"
-import { useLocation } from "react-router-dom"
-import { useEffect, useState } from "react"
+import PrizePool from "../sections/PrizePool";
+import Aboutus from "../sections/Aboutus";
+import HeroSection from "../sections/HeroSection";
+import Sponsors from "../sections/Sponsors";
+import Footer from "../sections/Footer";
+import { useLocation } from "react-router-dom";
+
+import { useEffect } from "react";
+import ScrollVideoSection from "@/sections/Events/ScrollVideoSection";
 
 export default function LandingPage() {
     const { pathname } = useLocation()
@@ -33,6 +34,7 @@ export default function LandingPage() {
         <div className="h-full w-full bg-black space-y-10 sm:space-y-16 md:space-y-24">
             <HeroSection />
             <Aboutus />
+            <ScrollVideoSection />
             <PrizePool />
             <Sponsors />
             <Footer />
