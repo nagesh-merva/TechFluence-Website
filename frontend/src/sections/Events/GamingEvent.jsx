@@ -8,59 +8,59 @@ export default function GamingEvents() {
     const events = [
         {
             id: 1,
-            title: "QUANTUM CIPHER",
-            image: "/events/offlineEvents.png",
-            description: "Convergence of vintage cryptography and futuristic decoding techniques.",
-            prizes: ["₹15,000", "₹10,000", "₹5,000"],
-            link: 'https://lu.ma/kq6ifdqc'
+            title: "Radianite Showdown",
+            image: "/events/valorant.jpg",
+            description: "The ultimate Valorant battle is here! Test your skills.",
+            prizes: ["₹6,000", "₹4,000"],
+            link: 'https://lu.ma/0d051cin'
         },
         {
             id: 2,
-            title: "NEON ODYSSEY",
-            image: "/events/offlineEvents.png",
-            description: "Navigate through digital labyrinths in this immersive reality challenge.",
-            prizes: ["₹12,000", "₹8,000", "₹4,000"],
+            title: "RETRO DUELS",
+            image: "/events/fifa.jpg",
+            description: "Get ready to rumble in 'Retro Duel'! KO’s- 1 v 1 action, and non-stop excitement await you.",
+            prizes: ["₹5,000", "₹3,000"],
             link: 'https://lu.ma/kq6ifdqc'
         },
         {
             id: 3,
-            title: "SYNTHDRONE ARENA",
-            image: "/events/offlineEvents.png",
-            description: "Battle of autonomous machines with cutting-edge AI capabilities.",
-            prizes: ["₹20,000", "₹15,000", "₹7,000"],
-            link: 'https://lu.ma/kq6ifdqc'
+            title: "Sovereign Skirmish",
+            image: "/events/clashroyale.jpg",
+            description: "Join the Clash Royale tournament where only the strongest will survive.",
+            prizes: ["₹3,000", "₹2,000"],
+            link: 'https://lu.ma/w4gl2xrx'
         },
         {
             id: 4,
-            title: "RETRO FLUX",
-            image: "/events/offlineEvents.png",
-            description: "Where 80s computing meets quantum algorithms in this nostalgic hackathon.",
-            prizes: ["₹10,000", "₹7,500", "₹3,500"],
-            link: 'https://lu.ma/kq6ifdqc'
+            title: "Neon Warfare",
+            image: "/events/minimilitia.jpg",
+            description: "Future Battle (A Retro-Futuristic Mini Militia Tournament).",
+            prizes: ["₹2,500", "₹1,500"],
+            link: 'https://lu.ma/rl005frx'
         },
         {
             id: 5,
-            title: "CYBERNETIC ECHO",
-            image: "/events/offlineEvents.png",
-            description: "Create harmonious symphonies using unconventional digital instruments.",
-            prizes: ["₹18,000", "₹12,000", "₹6,000"],
-            link: 'https://lu.ma/kq6ifdqc'
+            title: "The last Dino",
+            image: "/events/trex.jpg",
+            description: "You are the last dino left… RUN! Escape the meteor shower and survive.",
+            prizes: ["₹3,000"],
+            link: 'https://lu.ma/4925lpor'
         },
         {
             id: 6,
-            title: "HOLOGRAM NEXUS",
-            image: "/events/offlineEvents.png",
-            description: "Design interactive 3D projections that respond to neural feedback.",
-            prizes: ["₹25,000", "₹15,000", "₹8,000"],
-            link: 'https://lu.ma/kq6ifdqc'
+            title: "Crono Quest",
+            image: "/events/treasurehunt.jpg",
+            description: "The Retro-FuturisƟc Hunt (A Treasure Hunt).",
+            prizes: ["₹6,000", "₹4,000"],
+            link: 'https://lu.ma/xiz8gec0'
         },
         {
             id: 7,
-            title: "TERMINAL OVERRIDE",
-            image: "/events/offlineEvents.png",
-            description: "Ethical hacking competition featuring secured networks and cryptic puzzles.",
-            prizes: ["₹30,000", "₹20,000", "₹10,000"],
-            link: 'https://lu.ma/kq6ifdqc'
+            title: "Neon Nexus",
+            image: "/events/escaperoom.jpg",
+            description: "Your team is trapped inside V1️NTAGE, a rogue AI’s retro-futuristic mainframe. To escape, you must solve 6 puzzles.",
+            prizes: ["₹6,000", "₹4,000"],
+            link: 'https://lu.ma/arbp39p2'
         },
     ]
 
@@ -121,7 +121,7 @@ export default function GamingEvents() {
     }, [isScrollingAllowed])
 
     return (
-        <section ref={containerRef} className="relative h-[700vh] bg-black mt-32">
+        <section ref={containerRef} className="relative h-[800vh] bg-black mt-32">
             <div className="sticky top-0 h-screen overflow-hidden">
                 <div className="absolute inset-0 -z-0">
                     <AnimatedGridPattern
@@ -138,7 +138,7 @@ export default function GamingEvents() {
                 </div>
                 <motion.div
                     style={{ x: smoothX }}
-                    className="flex items-center h-full gap-6 md:gap-32 w-[500vw] sm:w-[400vw] md:w-[350vw] lg:w-[300vw] xl:w-[280vw]"
+                    className="flex items-center h-full gap-6 md:gap-32 w-[500vw] sm:w-[300vw] md:w-[250vw] "
                 >
                     <div className="flex flex-col items-center justify-center min-w-screen h-full px-6">
                         <h4 className="text-sm md:text-md text-creamy font-semibold font-space-mono tracking-wider text-center">// Gaming Events </h4>
@@ -169,7 +169,7 @@ export default function GamingEvents() {
                                             <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-transparent to-purple-500/10 mix-blend-overlay"></div>
                                             <div className="absolute inset-0 bg-gradient-to-br from-cyan-900/30 to-purple-900/30"></div>
                                             <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                                <p className="bg-gradient-to-br from-black/80 to-black/60 p-4 md:p-6 text-xl md:text-3xl font-bold text-white backdrop-blur-sm border border-white/20">
+                                                <p className="bg-gradient-to-br uppercase from-black/80 to-black/60 p-4 md:p-6 text-xl md:text-3xl font-bold text-white backdrop-blur-sm border border-white/20">
                                                     {event.title}
                                                 </p>
                                             </div>
@@ -183,10 +183,10 @@ export default function GamingEvents() {
                             </a>
                             <a href={event.link} target="_blank" className="w-[250px] sm:w-[250px] md:w-[220px] h-[350px] sm:h-[350px] md:h-[380px] bg-black/80 border border-gray-800 p-4 flex flex-col backdrop-blur-md">
                                 <div className="border-b border-gray-700 pb-2 mb-3">
-                                    <div className="text-xs text-gray-500 font-mono">[COLLECTION NAME] {"{"}</div>
+                                    <div className="text-xs text-gray-500 font-mono">[EVENT NAME] {"{"}</div>
                                     <div className="flex items-center gap-2 ml-4">
                                         <span className="text-gray-500">/</span>
-                                        <h3 className="text-lg text-cyan-400 font-mono font-bold tracking-wider">{event.title}</h3>
+                                        <h3 className="text-lg uppercase text-cyan-400 font-mono font-bold tracking-wider">{event.title}</h3>
                                     </div>
                                     <div className="text-xs text-gray-500 font-mono">{"{"}</div>
                                 </div>

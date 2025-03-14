@@ -8,59 +8,27 @@ export default function OnlineEvents() {
     const events = [
         {
             id: 1,
-            title: "QUANTUM CIPHER",
-            image: "/events/offlineEvents.png",
-            description: "Convergence of vintage cryptography and futuristic decoding techniques.",
-            prizes: ["₹15,000", "₹10,000", "₹5,000"],
-            link: 'https://lu.ma/kq6ifdqc'
+            title: "Nexa Vista",
+            image: "/events/photography.jpg",
+            description: "Step into the Future with a NOD to the past — RECORD, EDIT, AND POST",
+            prizes: ["₹1,500", "₹500"],
+            link: 'https://lu.ma/0c0vecvv'
         },
         {
             id: 2,
-            title: "NEON ODYSSEY",
-            image: "/events/offlineEvents.png",
-            description: "Navigate through digital labyrinths in this immersive reality challenge.",
-            prizes: ["₹12,000", "₹8,000", "₹4,000"],
-            link: 'https://lu.ma/kq6ifdqc'
+            title: "Aporcareelypse",
+            image: "/events/reel.jpg",
+            description: "A Glimpse Through Time – Capture a Future That Never Was!",
+            prizes: ["₹2,000", "₹1,000"],
+            link: 'https://lu.ma/qmj9bp5g'
         },
         {
             id: 3,
-            title: "SYNTHDRONE ARENA",
-            image: "/events/offlineEvents.png",
-            description: "Battle of autonomous machines with cutting-edge AI capabilities.",
-            prizes: ["₹20,000", "₹15,000", "₹7,000"],
-            link: 'https://lu.ma/kq6ifdqc'
-        },
-        {
-            id: 4,
-            title: "RETRO FLUX",
-            image: "/events/offlineEvents.png",
-            description: "Where 80s computing meets quantum algorithms in this nostalgic hackathon.",
-            prizes: ["₹10,000", "₹7,500", "₹3,500"],
-            link: 'https://lu.ma/kq6ifdqc'
-        },
-        {
-            id: 5,
-            title: "CYBERNETIC ECHO",
-            image: "/events/offlineEvents.png",
-            description: "Create harmonious symphonies using unconventional digital instruments.",
-            prizes: ["₹18,000", "₹12,000", "₹6,000"],
-            link: 'https://lu.ma/kq6ifdqc'
-        },
-        {
-            id: 6,
-            title: "HOLOGRAM NEXUS",
-            image: "/events/offlineEvents.png",
-            description: "Design interactive 3D projections that respond to neural feedback.",
-            prizes: ["₹25,000", "₹15,000", "₹8,000"],
-            link: 'https://lu.ma/kq6ifdqc'
-        },
-        {
-            id: 7,
-            title: "TERMINAL OVERRIDE",
-            image: "/events/offlineEvents.png",
-            description: "Ethical hacking competition featuring secured networks and cryptic puzzles.",
-            prizes: ["₹30,000", "₹20,000", "₹10,000"],
-            link: 'https://lu.ma/kq6ifdqc'
+            title: "MEME MAKING",
+            image: "/events/meme.jpg",
+            description: "Every futuristic predictions ever vs reality.",
+            prizes: ["₹1,500", "₹500"],
+            link: 'https://lu.ma/ejvznedp'
         },
     ]
 
@@ -122,7 +90,7 @@ export default function OnlineEvents() {
     }, [isScrollingAllowed])
 
     return (
-        <section ref={containerRef} className="relative h-[700vh] bg-black mt-32">
+        <section ref={containerRef} className="relative h-[600vh] bg-black mt-32">
             <div className="sticky top-0 h-screen overflow-hidden">
                 <div className="absolute inset-0 -z-0">
                     <AnimatedGridPattern
@@ -139,7 +107,7 @@ export default function OnlineEvents() {
                 </div>
                 <motion.div
                     style={{ x: smoothX }}
-                    className="flex items-center h-full gap-6 md:gap-32 w-[500vw] sm:w-[400vw] md:w-[350vw] lg:w-[300vw] xl:w-[280vw]"
+                    className="flex items-center h-full gap-6 md:gap-32 w-[230vw] sm:w-[170vw] md:w-[120vw]"
                 >
                     {events.map((event, index) => (
                         <div key={event.id} className="flex flex-col md:flex-row items-center gap-4 md:gap-6">
@@ -163,7 +131,7 @@ export default function OnlineEvents() {
                                             <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-transparent to-purple-500/10 mix-blend-overlay"></div>
                                             <div className="absolute inset-0 bg-gradient-to-br from-cyan-900/30 to-purple-900/30"></div>
                                             <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                                <p className="bg-gradient-to-br from-black/80 to-black/60 p-4 md:p-6 text-xl md:text-3xl font-bold text-white backdrop-blur-sm border border-white/20">
+                                                <p className="bg-gradient-to-br uppercase from-black/80 to-black/60 p-4 md:p-6 text-xl md:text-3xl font-bold text-white backdrop-blur-sm border border-white/20">
                                                     {event.title}
                                                 </p>
                                             </div>
@@ -177,10 +145,10 @@ export default function OnlineEvents() {
                             </a>
                             <a href={event.link} target="_blank" className="w-[250px] sm:w-[250px] md:w-[220px] h-[350px] sm:h-[350px] md:h-[380px] bg-black/80 border border-gray-800 p-4 flex flex-col backdrop-blur-md">
                                 <div className="border-b border-gray-700 pb-2 mb-3">
-                                    <div className="text-xs text-gray-500 font-mono">[COLLECTION NAME] {"{"}</div>
+                                    <div className="text-xs text-gray-500 font-mono">[EVENT NAME] {"{"}</div>
                                     <div className="flex items-center gap-2 ml-4">
                                         <span className="text-gray-500">/</span>
-                                        <h3 className="text-lg text-cyan-400 font-mono font-bold tracking-wider">{event.title}</h3>
+                                        <h3 className="text-lg uppercase text-cyan-400 font-mono font-bold tracking-wider">{event.title}</h3>
                                     </div>
                                     <div className="text-xs text-gray-500 font-mono">{"{"}</div>
                                 </div>
