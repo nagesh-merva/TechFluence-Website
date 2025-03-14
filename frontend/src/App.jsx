@@ -4,6 +4,7 @@ import LandingPage from "./pages/LandingPage";
 import EventsPage from "./pages/EventsPage";
 import CyberpunkLoader from "./sections/Events/CyberpunkLoader";
 import ResultsPage from "./pages/ResultsPage";
+import AboutCouncil from "./pages/AboutCouncil";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -17,9 +18,9 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
-  if (loading) {
-    return <CyberpunkLoader />;
-  }
+  // if (loading) {
+  //   return <CyberpunkLoader />;
+  // }
 
   // Render routes when loading is complete
   return (
@@ -28,7 +29,7 @@ function App() {
         <Route index path="/" element={<LandingPage />} />
         <Route index path="/events" element={<EventsPage />} />
         <Route index path="/results" element={<ResultsPage />} />
-        <Route index path="/aboutus" element={<></>} />
+        <Route index path="/aboutus" element={<AboutCouncil />} />
         <Route index path="/gallery" element={<></>} />
       </Routes>
     </div>

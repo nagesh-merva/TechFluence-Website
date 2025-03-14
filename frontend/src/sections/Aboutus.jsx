@@ -1,9 +1,10 @@
 import GlitchText from "../components/GlitchText";
-import { RetroGrid } from "@/components/magicui/retro-grid";
+import { TextAnimate } from "@/components/magicui/text-animate";
 import { AnimatedGridPattern } from "@/components/magicui/animated-grid-pattern";
 import { cn } from "@/lib/utils";
 import { AuroraText } from "@/components/magicui/aurora-text";
 import { BorderBeam } from "@/components/magicui/border-beam";
+import { BoxReveal } from "@/components/magicui/box-reveal";
 
 export default function Aboutus() {
   return (
@@ -38,28 +39,38 @@ export default function Aboutus() {
           {/* Heading (Fixed Size for Mobile) */}
           <div className="w-full flex justify-center mb-8 mt-2">
             <header className="text-creamy font-big-noodle font-bold text-[clamp(1.5rem, 5vw, 4rem)] leading-tight text-center">
-              <AuroraText className="neon-text sm: text-5xl md:text-7xl">
-                About Techfluence
-              </AuroraText>
+              <BoxReveal boxColor="bg-amber-900" duration={1}>
+                <AuroraText className="neon-text sm: text-5xl md:text-7xl">
+                  About Techfluence
+                </AuroraText>
+              </BoxReveal>
             </header>
           </div>
 
           {/* Description */}
-          <p className="text-creamy text-base sm:text-lg md:text-xl font-normal leading-relaxed">
+          <TextAnimate
+            animation="slideUp"
+            by="word"
+            className="text-creamy text-base sm:text-lg md:text-xl font-normal leading-relaxed"
+          >
             Techfluence is a celebration of cultures and technology, not just as
             an institution, but as a country. It aims at instilling a sense of
             belongingness by being a melting pot of ideas open to students of
             all disciplines. With intriguing events and competitions along with
             resourceful workshops by experts and professionals, Techfluence 25
             is all set to be an enthralling experience for everyone involved.
-          </p>
+          </TextAnimate>
 
-          <p className="text-creamy font-popins mt-5 text-base sm:text-lg md:text-xl leading-relaxed">
+          <TextAnimate
+            animation="slideUp"
+            by="word"
+            className="text-creamy font-popins mt-5 text-base sm:text-lg md:text-xl leading-relaxed"
+          >
             Techfluence is a celebration of cultures and technology, not just as
             an institution, but as a country. It aims at instilling a sense of
             belongingness by being a melting pot of ideas open to students of
             all disciplines.
-          </p>
+          </TextAnimate>
 
           {/* Border Animation */}
           <BorderBeam duration={8} size={100} />
