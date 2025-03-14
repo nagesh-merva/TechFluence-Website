@@ -112,7 +112,7 @@ const Footer = () => {
                                 <Linkedin size={20} />
                             </a>
                         </div>
-                        <Button variant="outline" className="border-creamy/50 bg-transparent text-creamy hover:bg-creamy/20 group relative overflow-hidden">
+                        <Button asChild={true} variant="outline" className="border-creamy/50 bg-transparent text-creamy hover:bg-creamy/20 group relative overflow-hidden">
                             <button onClick={() => navigate('/events')}>
                                 <span className="relative z-10 font-space-mono">Explore Events</span>
                                 <span className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity" />

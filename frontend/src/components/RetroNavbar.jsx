@@ -39,28 +39,25 @@ const RetroNavbar = ({ isOpen, onClose }) => {
 
     const playNavSound = (type) => {
         console.log(`Playing sound: ${type}`)
-        // Uncomment when you have sound files
-        /*
-        const audio = new Audio();
-        audio.volume = 0.3;
-        
-        switch(type) {
+        const audio = new Audio()
+        audio.volume = 0.6
+
+        switch (type) {
             case 'hover':
-                audio.src = '/sounds/hover.mp3';
-                break;
+                audio.src = '/sounds/hover.mp3'
+                break
             case 'select':
-                audio.src = '/sounds/select.mp3';
-                break;
+                audio.src = '/sounds/select.mp3'
+                break
             case 'open':
-                audio.src = '/sounds/open.mp3';
+                audio.src = '/sounds/open.mp3'
                 break;
             case 'close':
-                audio.src = '/sounds/close.mp3';
-                break;
+                audio.src = '/sounds/open.mp3'
+                break
         }
-        
+
         audio.play().catch(e => console.log('Audio play prevented by browser'));
-        */
     }
 
     const handleNavigate = (path) => {

@@ -1,20 +1,29 @@
-import React, { useState, useEffect } from "react";
-import CRTOverlay from "../../components/events/TvOverlay";
-import RetroNavbar from "@/components/RetroNavbar";
-import { ChevronLeft } from "lucide-react";
-import { HyperText } from "@/components/magicui/hyper-text";
+import React, { useState, useEffect } from "react"
+import CRTOverlay from "../../components/events/TvOverlay"
+import RetroNavbar from "@/components/RetroNavbar"
+import { ChevronLeft } from "lucide-react"
+import { HyperText } from "@/components/magicui/hyper-text"
 
 export default function EventsHeroSection() {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [showNavbar, setShowNavbar] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0)
+  const [showNavbar, setShowNavbar] = useState(false)
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setActiveIndex((prevIndex) => (prevIndex + 1) % 4);
-    }, 500);
+      setActiveIndex((prevIndex) => (prevIndex + 1) % 4)
+    }, 500)
 
-    return () => clearInterval(interval);
-  }, []);
+    return () => clearInterval(interval)
+  }, [])
+
+  useEffect(() => {
+    const audio = new Audio()
+    audio.volume = 1
+    audio.src = "/sounds/opening.mp3"
+    setTimeout(() => {
+      audio.play()
+    }, 1000)
+  }, [])
 
   return (
     <div className="relative w-full h-svh bg-black overflow-hidden">
@@ -63,24 +72,20 @@ export default function EventsHeroSection() {
           <div className="mt-4 sm:mt-6 md:mt-10 lg:mt-16 max-w-full md:max-w-[60%]">
             <div className="flex space-x-1">
               <div
-                className={`h-4 sm:h-5 w-1 sm:w-2 border ${
-                  activeIndex === 0 ? "bg-creamy" : "bg-transparent"
-                } border-creamy transition-colors duration-300`}
+                className={`h-4 sm:h-5 w-1 sm:w-2 border ${activeIndex === 0 ? "bg-creamy" : "bg-transparent"
+                  } border-creamy transition-colors duration-300`}
               />
               <div
-                className={`h-4 sm:h-5 w-1 sm:w-2 border ${
-                  activeIndex === 1 ? "bg-creamy" : "bg-transparent"
-                } border-creamy transition-colors duration-300`}
+                className={`h-4 sm:h-5 w-1 sm:w-2 border ${activeIndex === 1 ? "bg-creamy" : "bg-transparent"
+                  } border-creamy transition-colors duration-300`}
               />
               <div
-                className={`h-4 sm:h-5 w-1 sm:w-2 border ${
-                  activeIndex === 2 ? "bg-creamy" : "bg-transparent"
-                } border-creamy transition-colors duration-300`}
+                className={`h-4 sm:h-5 w-1 sm:w-2 border ${activeIndex === 2 ? "bg-creamy" : "bg-transparent"
+                  } border-creamy transition-colors duration-300`}
               />
               <div
-                className={`h-4 sm:h-5 w-4 sm:w-8 border ${
-                  activeIndex === 3 ? "bg-creamy" : "bg-transparent"
-                } border-creamy transition-colors duration-300`}
+                className={`h-4 sm:h-5 w-4 sm:w-8 border ${activeIndex === 3 ? "bg-creamy" : "bg-transparent"
+                  } border-creamy transition-colors duration-300`}
               />
             </div>
             <p className="pt-2 text-sm sm:text-base md:text-lg text-creamy font-semibold font-sans tracking-wider text-left leading-5 sm:leading-6">
@@ -124,5 +129,5 @@ export default function EventsHeroSection() {
         </div>
       </div>
     </div>
-  );
+  )
 }

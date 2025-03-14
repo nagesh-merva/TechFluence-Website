@@ -11,7 +11,7 @@ export default function Winners() {
         {
             name: "NEON ODYSSEY",
             description: "NAVIGATE THROUGH DIGITAL LABYRINTHS IN THIS IMMERSIVE REALITY CHALLENGE.",
-            image: "/events/offlineEvents.png",
+            image: "/events/winners.jpg",
             winners: [
                 { id: "001", name: "ARIA NOVA", prize: "₹12,000" },
                 { id: "002", name: "ZION FLUX", prize: "₹8,000" },
@@ -21,7 +21,7 @@ export default function Winners() {
         {
             name: "CYBER PULSE",
             description: "MASTER THE CODE AND CONQUER THE VIRTUAL REALMS IN THIS ADVANCED TECH COMPETITION.",
-            image: "/events/offlineEvents.png",
+            image: "/events/winners.jpg",
             winners: [
                 { id: "101", name: "NOVA BYTE", prize: "₹15,000" },
                 { id: "102", name: "PIXEL STORM", prize: "₹10,000" },
@@ -31,7 +31,7 @@ export default function Winners() {
         {
             name: "NEON ODYSSEY",
             description: "NAVIGATE THROUGH DIGITAL LABYRINTHS IN THIS IMMERSIVE REALITY CHALLENGE.",
-            image: "/events/offlineEvents.png",
+            image: "/events/winners.jpg",
             winners: [
                 { id: "001", name: "ARIA NOVA", prize: "₹12,000" },
                 { id: "002", name: "ZION FLUX", prize: "₹8,000" },
@@ -41,7 +41,7 @@ export default function Winners() {
         {
             name: "CYBER PULSE",
             description: "MASTER THE CODE AND CONQUER THE VIRTUAL REALMS IN THIS ADVANCED TECH COMPETITION.",
-            image: "/events/offlineEvents.png",
+            image: "/events/winners.jpg",
             winners: [
                 { id: "101", name: "NOVA BYTE", prize: "₹15,000" },
                 { id: "102", name: "PIXEL STORM", prize: "₹10,000" },

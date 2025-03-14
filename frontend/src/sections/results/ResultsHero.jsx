@@ -14,6 +14,16 @@ export default function ResultsHero() {
         return () => clearInterval(interval)
     }, [])
 
+    useEffect(() => {
+        const audio = new Audio()
+        audio.volume = 1
+        audio.src = "/sounds/opening.mp3"
+        setTimeout(() => {
+            audio.play()
+        }, 1000)
+    }, [])
+
+
     return (
         <div className="w-full h-svh bg-black z-50">
             {showNavbar && <RetroNavbar isOpen={showNavbar} onClose={() => setShowNavbar(false)} />}

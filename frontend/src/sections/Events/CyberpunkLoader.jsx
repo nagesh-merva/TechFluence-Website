@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { MousePointer2 } from "lucide-react";
+import playNavSound from "@/components/PlaySound";
 
 const CyberpunkLoader = () => {
   const [progress, setProgress] = useState(0);
   const [showChat, setShowChat] = useState(false);
   const [chatStage, setChatStage] = useState(0);
   const [cursorAnimation, setCursorAnimation] = useState(true);
+  const playSound = () => playNavSound("opening")
 
   useEffect(() => {
     // Slow down the overall loading progress
@@ -47,6 +49,10 @@ const CyberpunkLoader = () => {
     if (progress >= 90 && chatStage === 4) {
       setChatStage(5); // TF's final message
       setCursorAnimation(false);
+      const audio = new Audio()
+      audio.volume = 1
+      audio.src = "/sounds/opening.mp3"
+      audio.play()
     }
 
     if (progress >= 100) {
