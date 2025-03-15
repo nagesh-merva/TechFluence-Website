@@ -8,60 +8,68 @@ export default function OfflineEvents() {
     const events = [
         {
             id: 1,
-            title: "QUANTUM CIPHER",
-            image: "/events/offlineEvents.png",
-            description: "Convergence of vintage cryptography and futuristic decoding techniques.",
-            prizes: ["₹15,000", "₹10,000", "₹5,000"],
-            link: 'https://lu.ma/kq6ifdqc'
+            title: "RETROTHON",
+            image: "/events/hackathon.jpg",
+            description: "Where Past Meets Future in Code! A 24-hour hackathon.",
+            prizes: ["₹25,00", "₹15,000"],
+            link: 'https://lu.ma/tekhk5ld'
         },
         {
             id: 2,
-            title: "NEON ODYSSEY",
-            image: "/events/offlineEvents.png",
-            description: "Navigate through digital labyrinths in this immersive reality challenge.",
-            prizes: ["₹12,000", "₹8,000", "₹4,000"],
-            link: 'https://lu.ma/kq6ifdqc'
+            title: "cyberturf",
+            image: "/events/robosoccer.jpg",
+            description: "Robots clash in a retro-futuristic soccer showdown!",
+            prizes: ["₹7,000", "₹5,000"],
+            link: 'https://lu.ma/4al3cihp'
         },
         {
             id: 3,
-            title: "SYNTHDRONE ARENA",
-            image: "/events/offlineEvents.png",
-            description: "Battle of autonomous machines with cutting-edge AI capabilities.",
-            prizes: ["₹20,000", "₹15,000", "₹7,000"],
-            link: 'https://lu.ma/kq6ifdqc'
+            title: "Neocode Arcade",
+            image: "/events/codefun.jpg",
+            description: "Code your way through a nostalgic arcade experience!",
+            prizes: ["₹6,000", "₹4,000"],
+            link: 'https://lu.ma/9h5r41v3'
         },
         {
             id: 4,
-            title: "RETRO FLUX",
-            image: "/events/offlineEvents.png",
-            description: "Where 80s computing meets quantum algorithms in this nostalgic hackathon.",
-            prizes: ["₹10,000", "₹7,500", "₹3,500"],
-            link: 'https://lu.ma/kq6ifdqc'
+            title: "BYTECODE BATTLE",
+            image: "/events/competativeP.jpg",
+            description: "A Competitive Coding Challenge to test your coding skills.",
+            prizes: ["₹5,000", "₹3,000"],
+            link: 'https://lu.ma/ofo6o1en'
         },
         {
             id: 5,
-            title: "CYBERNETIC ECHO",
-            image: "/events/offlineEvents.png",
-            description: "Create harmonious symphonies using unconventional digital instruments.",
-            prizes: ["₹18,000", "₹12,000", "₹6,000"],
-            link: 'https://lu.ma/kq6ifdqc'
+            title: "CHRONOVERSE",
+            image: "/events/uiux.jpg",
+            description: "Step into the Chronoverse, where past meets future in an electrifying UI/UX challenge!",
+            prizes: ["₹7,000", "₹4,000"],
+            link: 'https://lu.ma/rm45fabf'
         },
         {
             id: 6,
-            title: "HOLOGRAM NEXUS",
-            image: "/events/offlineEvents.png",
-            description: "Design interactive 3D projections that respond to neural feedback.",
-            prizes: ["₹25,000", "₹15,000", "₹8,000"],
-            link: 'https://lu.ma/kq6ifdqc'
+            title: "Neo Corp",
+            image: "/events/sharktank.jpg",
+            description: "Pitch your startup ideas to a panel of investors in a Shark Tank-style event.",
+            prizes: ["₹5,000", "₹3,000"],
+            link: 'https://lu.ma/108q8gao'
         },
         {
             id: 7,
-            title: "TERMINAL OVERRIDE",
-            image: "/events/offlineEvents.png",
-            description: "Ethical hacking competition featuring secured networks and cryptic puzzles.",
-            prizes: ["₹30,000", "₹20,000", "₹10,000"],
-            link: 'https://lu.ma/kq6ifdqc'
+            title: "Postmodern Parleys",
+            image: "/events/debate.jpg",
+            description: "Engage in thought-provoking debates. Can you win the argument with the power of your words?",
+            prizes: ["₹3,750", "₹2,750"],
+            link: 'https://lu.ma/vyo5knj6a'
         },
+        {
+            id: 8,
+            title: "Mind Matrix",
+            image: "/events/quiz.jpg",
+            description: "Quiz competition featuring mind-bending questions and puzzles.",
+            prizes: ["₹3,500", "₹2,500", "₹1,500"],
+            link: 'https://lu.ma/r0k9mysl'
+        }
     ]
 
     const containerRef = useRef(null)
@@ -121,7 +129,7 @@ export default function OfflineEvents() {
     }, [isScrollingAllowed])
 
     return (
-        <section ref={containerRef} className="relative h-[700vh] bg-black mt-32">
+        <section ref={containerRef} className="relative h-[800vh] bg-black mt-32">
             <div className="sticky top-0 h-screen overflow-hidden">
                 <div className="absolute inset-0 -z-0">
                     <AnimatedGridPattern
@@ -138,7 +146,7 @@ export default function OfflineEvents() {
                 </div>
                 <motion.div
                     style={{ x: smoothX }}
-                    className="flex items-center h-full gap-6 md:gap-32 w-[500vw] sm:w-[400vw] md:w-[350vw] lg:w-[300vw] xl:w-[280vw]"
+                    className="flex items-center h-full gap-6 md:gap-32 w-[600vw] sm:w-[350vw] md:w-[290vw]"
                 >
                     <div className="flex flex-col items-center justify-center min-w-screen h-full px-6">
                         <h4 className="text-sm md:text-md text-creamy font-semibold font-space-mono tracking-wider text-center">// Offline Events </h4>
@@ -169,7 +177,7 @@ export default function OfflineEvents() {
                                             <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-transparent to-purple-500/10 mix-blend-overlay"></div>
                                             <div className="absolute inset-0 bg-gradient-to-br from-cyan-900/30 to-purple-900/30"></div>
                                             <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                                <p className="bg-gradient-to-br from-black/80 to-black/60 p-4 md:p-6 text-xl md:text-3xl font-bold text-white backdrop-blur-sm border border-white/20">
+                                                <p className="bg-gradient-to-br uppercase from-black/80 to-black/60 p-4 md:p-6 text-xl md:text-3xl font-bold text-white backdrop-blur-sm border border-white/20">
                                                     {event.title}
                                                 </p>
                                             </div>
@@ -186,7 +194,7 @@ export default function OfflineEvents() {
                                     <div className="text-xs text-gray-500 font-mono">[COLLECTION NAME] {"{"}</div>
                                     <div className="flex items-center gap-2 ml-4">
                                         <span className="text-gray-500">/</span>
-                                        <h3 className="text-lg text-cyan-400 font-mono font-bold tracking-wider">{event.title}</h3>
+                                        <h3 className="text-lg uppercase text-cyan-400 font-mono font-bold tracking-wider">{event.title}</h3>
                                     </div>
                                     <div className="text-xs text-gray-500 font-mono">{"{"}</div>
                                 </div>

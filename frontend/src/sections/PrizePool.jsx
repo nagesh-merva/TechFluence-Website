@@ -109,7 +109,7 @@ export default function PrizePool() {
         <div className="px-4 py-8 sm:py-16 md:py-20 flex flex-col items-center w-full sm:w-9/12 space-y-10 sm:space-y-12 md:space-y-20">
           <div className="border-rotate w-4/5 bg-white/15 backdrop-blur-sm px-5 py-3 md:py-6 md:px-8 shadow-lg sm:shadow-xl shadow-[#E5A445] rounded-2xl">
             <p className="text-center text-white text-7xl font-bold font-big-noodle  my-2">
-              PRIZE POOL of Rs 1.7 Lakhs
+              PRIZE POOL of Rs 1.6 Lakhs+
             </p>
           </div>
 
