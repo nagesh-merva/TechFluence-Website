@@ -206,7 +206,7 @@ export default function OfflineEvents() {
                             </a>
                             <a href={event.link} target="_blank" className="w-[250px] sm:w-[250px] md:w-[220px] h-[350px] sm:h-[350px] md:h-[380px] bg-black/80 border border-gray-800 p-4 flex flex-col backdrop-blur-md">
                                 <div className="border-b border-gray-700 pb-2 mb-3">
-                                    <div className="text-xs text-gray-500 font-mono">[COLLECTION NAME] {"{"}</div>
+                                    <div className="text-xs text-gray-500 font-mono">[EVENTS NAME] {"{"}</div>
                                     <div className="flex items-center gap-2 ml-4">
                                         <span className="text-gray-500">/</span>
                                         <h3 className="text-lg uppercase text-cyan-400 font-mono font-bold tracking-wider">{event.title}</h3>
