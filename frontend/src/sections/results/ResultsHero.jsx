@@ -83,12 +83,12 @@ export default function ResultsHero() {
                                     className={`h-4 sm:h-5 w-4 sm:w-8 border ${activeIndex === 3 ? 'bg-creamy' : 'bg-transparent'} border-creamy transition-colors duration-300`}
                                 />
                             </div>
-                            <p className="pt-2 text-sm sm:text-base md:text-lg text-creamy font-semibold font-sans tracking-wider text-left leading-5 sm:leading-6">
+                            <p className="pt-2 text-[10px] sm:text-base md:text-lg text-creamy font-semibold font-sans tracking-wider text-left leading-5 sm:leading-6">
                                 The battle has raged, the challenges have been conquered, and now, only the strongest remain. Through fire and fury, they have emerged—the sole survivors of the ultimate arena. Blood, sweat, and strategy have defined their path, but now, they claim their rightful place among legends. The war is over. The victors rise.
                             </p>
                         </div>
 
-                        <div className="relative h-fit w-full md:w-fit p-3 sm:p-4 md:p-5 text-creamy bg-creamy/20 border border-creamy flex flex-col md:place-self-end">
+                        <div className="relative h-fit w-full md:w-fit p-3 sm:p-4 md:p-5 text-creamy bg-creamy/20 border border-creamy flex flex-col scale-75 md:scale-100 md:place-self-end">
                             <ChevronLeft className="absolute -top-4 -left-4 text-xl text-creamy rotate-45" />
                             <ChevronLeft className="absolute -bottom-4 -left-4 text-xl text-creamy -rotate-45" />
                             <ChevronLeft className="absolute -top-4 -right-4 text-xl text-creamy rotate-135" />

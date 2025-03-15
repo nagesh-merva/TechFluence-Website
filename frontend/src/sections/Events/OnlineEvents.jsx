@@ -90,7 +90,7 @@ export default function OnlineEvents() {
     }, [isScrollingAllowed])
 
     return (
-        <section ref={containerRef} className="relative h-[600vh] bg-black mt-32">
+        <section ref={containerRef} className="relative h-[300vh] sm:h-[600vh] bg-black mt-32">
             <div className="sticky top-0 h-screen overflow-hidden">
                 <div className="absolute inset-0 -z-0">
                     <AnimatedGridPattern
@@ -110,7 +110,7 @@ export default function OnlineEvents() {
                     className="flex items-center h-full gap-6 md:gap-32 w-[230vw] sm:w-[170vw] md:w-[120vw]"
                 >
                     {events.map((event, index) => (
-                        <div key={event.id} className="flex flex-col md:flex-row items-center gap-4 md:gap-6">
+                        <div key={event.id} className="flex flex-col md:flex-row items-center gap-4 md:gap-6 scale-[80%] sm:scale-100">
                             <a href={event.link} target="_blank" className="relative">
                                 <div className="absolute top-2 left-2 z-30 bg-black/70 px-2 py-1 text-xs text-creamy font-mono">
                                     [{index.toString().padStart(3, '0')}]
@@ -186,6 +186,7 @@ export default function OnlineEvents() {
                         </h1>
                     </div>
                 </motion.div>
+                <span className="sm:hidden absolute bottom-4 left-1/2 -translate-x-1/2 text-sm tracking-wider text-white font-space-mono font-semibold">Scroll down</span>
             </div>
         </section>
     )

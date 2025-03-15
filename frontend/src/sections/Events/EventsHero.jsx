@@ -88,7 +88,7 @@ export default function EventsHeroSection() {
                   } border-creamy transition-colors duration-300`}
               />
             </div>
-            <p className="pt-2 text-sm sm:text-base md:text-lg text-creamy font-semibold font-sans tracking-wider text-left leading-5 sm:leading-6">
+            <p className="pt-2 text-[10px] sm:text-base md:text-lg text-creamy font-semibold font-sans tracking-wider text-left leading-5 sm:leading-6">
               Welcome to Techfluence, a world where the line between reality and
               digital warfare blurs. This is not just an eventâ€”itâ€™s an
               adventure, a challenge, a test of skill and survival. From the
@@ -99,7 +99,7 @@ export default function EventsHeroSection() {
             </p>
           </div>
 
-          <div className="relative h-fit w-full md:w-fit p-3 sm:p-4 md:p-5 text-creamy bg-creamy/20 border border-creamy flex flex-col md:place-self-end">
+          <div className="relative h-fit w-full md:w-fit p-3 sm:p-4 md:p-5 text-creamy bg-creamy/20 border border-creamy flex flex-col scale-75 md:scale-100 md:place-self-end">
             <ChevronLeft className="absolute -top-4 -left-4 text-xl text-creamy rotate-45" />
             <ChevronLeft className="absolute -bottom-4 -left-4 text-xl text-creamy -rotate-45" />
             <ChevronLeft className="absolute -top-4 -right-4 text-xl text-creamy rotate-135" />
