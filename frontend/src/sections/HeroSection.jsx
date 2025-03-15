@@ -59,7 +59,7 @@ export default function HeroSection() {
             </span>
           </h1>
         </div>
-        <div className=" pb-5 flex flex-col md:flex-row justify-between mt-auto gap-6">
+        <div className=" pb-10 flex flex-col md:flex-row justify-between mt-auto gap-6">
           <div className="px-4 mt-4 sm:mt-6 md:mt-10 lg:mt-16 max-w-full md:max-w-[60%]">
             <div className="flex space-x-1">
               <div
@@ -89,7 +89,7 @@ export default function HeroSection() {
               obstacles designed to push you beyond your limits.
             </p>
           </div>
-          <div className="relative h-fit w-full md:w-fit p-3 sm:p-4 md:p-5 scale-50 md:scale-100 md:place-self-end">
+          <div className="relative h-fit w-full md:w-fit p-3 sm:p-4 md:p-5 scale-[65%] md:scale-100 md:place-self-end">
             <CountdownTimer />
           </div>
         </div>
