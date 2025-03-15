@@ -54,16 +54,13 @@ export default function OnlineEvents() {
         }
     }
 
-    // Note: The original has [calculateEndTransform(), "0%"] - this is the correct order for this component
-    // as it's coming in from the right instead of going to the right
     const x = useTransform(scrollYProgress, [0, 1], [calculateEndTransform(), "0%"])
 
-    // Improved spring animation settings for smoother motion on mobile
     const smoothX = useSpring(x, {
         stiffness: windowWidth < 640 ? 100 : 50,
         damping: windowWidth < 640 ? 20 : 30,
-        mass: windowWidth < 640 ? 0.5 : 1, // Lower mass for mobile makes it less bouncy
-        restDelta: 0.001 // Smaller rest delta for more precise stopping
+        mass: windowWidth < 640 ? 0.5 : 1,
+        restDelta: 0.001
     })
 
     useEffect(() => {
@@ -76,7 +73,6 @@ export default function OnlineEvents() {
     }, [])
 
     useEffect(() => {
-        // Enhanced scroll handling for mobile
         const handleWheel = (event) => {
             if (!containerRef.current || !isScrollingAllowed) return
             const container = containerRef.current
@@ -85,15 +81,12 @@ export default function OnlineEvents() {
 
             if (!atTop && !atBottom) {
                 event.preventDefault()
-                // Smoother scrolling with smaller increments for mobile
                 const scrollAmount = windowWidth < 640 ? (event.deltaY > 0 ? 30 : -30) : (event.deltaY > 0 ? 50 : -50)
                 window.scrollBy({
                     top: scrollAmount,
-                    behavior: windowWidth < 640 ? 'auto' : 'smooth' // Auto for mobile prevents jank
+                    behavior: windowWidth < 640 ? 'auto' : 'smooth'
                 })
             }
-
-            // Add a small delay before allowing scrolling again on mobile
             if (atBottom || atTop) {
                 setIsScrollingAllowed(false)
                 if (windowWidth < 640) {
@@ -111,7 +104,7 @@ export default function OnlineEvents() {
     }, [isScrollingAllowed, windowWidth])
 
     return (
-        <section ref={containerRef} className="relative h-[450vh] sm:h-[600vh] bg-black mt-32">
+        <section ref={containerRef} className="relative h-[300vh] sm:h-[600vh] bg-black mt-32">
             <div className="sticky top-0 h-screen overflow-hidden">
                 <div className="absolute inset-0 -z-0">
                     <AnimatedGridPattern
