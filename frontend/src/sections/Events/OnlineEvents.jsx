@@ -42,8 +42,9 @@ export default function OnlineEvents() {
     })
 
     const calculateEndTransform = () => {
+        // Optimize for mobile with consistent transform values
         if (windowWidth < 640) {
-            return "-100%"
+            return "-100%" // This ensures it doesn't go too far on mobile
         } else if (windowWidth >= 1280) {
             return "-125%"
         } else if (windowWidth >= 1024) {
@@ -55,7 +56,12 @@ export default function OnlineEvents() {
 
     const x = useTransform(scrollYProgress, [0, 1], [calculateEndTransform(), "0%"])
 
-    const smoothX = useSpring(x, { stiffness: 50, damping: 30 })
+    const smoothX = useSpring(x, {
+        stiffness: windowWidth < 640 ? 100 : 50,
+        damping: windowWidth < 640 ? 20 : 30,
+        mass: windowWidth < 640 ? 0.5 : 1,
+        restDelta: 0.001
+    })
 
     useEffect(() => {
         const handleResize = () => {
@@ -75,11 +81,19 @@ export default function OnlineEvents() {
 
             if (!atTop && !atBottom) {
                 event.preventDefault()
-                window.scrollBy(0, event.deltaY > 0 ? 50 : -50)
+                const scrollAmount = windowWidth < 640 ? (event.deltaY > 0 ? 30 : -30) : (event.deltaY > 0 ? 50 : -50)
+                window.scrollBy({
+                    top: scrollAmount,
+                    behavior: windowWidth < 640 ? 'auto' : 'smooth'
+                })
             }
-
             if (atBottom || atTop) {
                 setIsScrollingAllowed(false)
+                if (windowWidth < 640) {
+                    setTimeout(() => setIsScrollingAllowed(true), 100)
+                } else {
+                    setIsScrollingAllowed(true)
+                }
             } else {
                 setIsScrollingAllowed(true)
             }
@@ -87,7 +101,7 @@ export default function OnlineEvents() {
 
         window.addEventListener("wheel", handleWheel, { passive: false })
         return () => window.removeEventListener("wheel", handleWheel)
-    }, [isScrollingAllowed])
+    }, [isScrollingAllowed, windowWidth])
 
     return (
         <section ref={containerRef} className="relative h-[300vh] sm:h-[600vh] bg-black mt-32">
