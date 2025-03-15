@@ -3,9 +3,31 @@ import LandingPage from "./pages/LandingPage";
 import EventsPage from "./pages/EventsPage";
 import ResultsPage from "./pages/ResultsPage";
 import AboutCouncil from "./pages/AboutCouncil";
+import CyberpunkLoader from "@/sections/Events/CyberpunkLoader";
+import { useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
 import GalleryPage from "./pages/GalleryPage";
 
 function App() {
+  const { pathname } = useLocation()
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [pathname])
+
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false)
+    }, 12000)
+
+    return () => clearTimeout(timer)
+  }, [])
+
+  if (loading) {
+    return <CyberpunkLoader />
+  }
 
   return (
     <div className="h-full w-full">
