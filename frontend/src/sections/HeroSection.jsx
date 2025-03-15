@@ -79,7 +79,7 @@ export default function HeroSection() {
                   } border-creamy transition-colors duration-300`}
               />
             </div>
-            <p className="pt-2 text-sm sm:text-base md:text-lg text-creamy font-semibold font-sans tracking-wider text-left leading-5 sm:leading-6">
+            <p className="pt-2 text-[10px] sm:text-base md:text-lg text-creamy font-semibold font-sans tracking-wider text-left leading-5 sm:leading-6">
               Welcome to Techfluence, a world where the line between reality and
               digital warfare blurs. This is not just an event its an
               adventure, a challenge, a test of skill and survival. From the
@@ -89,7 +89,7 @@ export default function HeroSection() {
               obstacles designed to push you beyond your limits.
             </p>
           </div>
-          <div className="relative h-fit w-full md:w-fit p-3 sm:p-4 md:p-5  md:place-self-end">
+          <div className="relative h-fit w-full md:w-fit p-3 sm:p-4 md:p-5 scale-75 md:scale-100 md:place-self-end">
             <CountdownTimer />
           </div>
         </div>

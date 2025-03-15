@@ -27,7 +27,7 @@ const WinnerAnnouncement = ({ eventData }) => {
                         {/* <div className="flex items-center text-xs text-gray-400 font-mono mb-2 ml-4">
                             [DESCRIPTION] {'{'}
                         </div> */}
-                        <img src={eventData.image} alt="event winners" className='w-full h-28 object-cover' />
+                        <img src={'/events/winners.jpg'} alt="event winners" className='w-full h-28 object-cover' />
                         {/* <div className="flex items-center text-xs text-gray-400 font-mono mt-2 ml-4">
                             {'}'}
                         </div> */}

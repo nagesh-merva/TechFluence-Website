@@ -111,19 +111,19 @@ const ScrollVideoSection = () => {
   };
 
   return (
-    <section className="relative h-auto sm:h-screen w-full" id="event-video-section">
+    <section className="relative h-fit sm:h-svh w-full" id="event-video-section">
       {/* This is the trigger section that will be replaced by the video */}
       {!isFullyShown && (
         <div
           ref={sectionRef}
-          className={`h-screen w-full flex items-center justify-center bg-gradient-to-b from-black to-zinc-900 ${isVideoActive ? "opacity-0" : "opacity-100"
+          className={`h-fit sm:h-svh w-full flex items-center justify-center bg-gradient-to-b from-black to-zinc-900 ${isVideoActive ? "opacity-0" : "opacity-100"
             } transition-opacity duration-500`}
         ></div>
       )}
       {/* Video section that starts fixed and stays fixed until user scrolls */}
       <div
         className={`${isFullyShown ? "relative" : "fixed inset-0"
-          } bg-black z-50 h-auto sm:h-screen w-full transition-transform duration-700 ${isVideoActive ? "translate-y-0" : "translate-y-full"
+          } bg-black z-50 h-auto sm:h-svh w-full transition-transform duration-700 ${isVideoActive ? "translate-y-0" : "translate-y-full"
           }`}
       >
         {/* Container for rotation to ensure all content rotates together */}
