@@ -59,7 +59,7 @@ export default function HeroSection() {
             </span>
           </h1>
         </div>
-        <div className="px-6 pb-5 flex flex-col md:flex-row justify-between mt-auto gap-6">
+        <div className="mx-6 pb-5 flex flex-col md:flex-row justify-between mt-auto gap-6">
           <div className="mt-4 sm:mt-6 md:mt-10 lg:mt-16 max-w-full md:max-w-[60%]">
             <div className="flex space-x-1">
               <div

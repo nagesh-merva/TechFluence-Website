@@ -56,7 +56,7 @@ export default function OfflineEvents() {
         },
         {
             id: 7,
-            title: "Postmodern Parleys",
+            title: "Postmodern Parleys",
             image: "/events/debate.jpg",
             description: "Engage in thought-provoking debates. Can you win the argument with the power of your words?",
             prizes: ["₹3,750", "₹2,750"],
@@ -83,7 +83,7 @@ export default function OfflineEvents() {
 
     const calculateEndTransform = () => {
         if (windowWidth < 640) {
-            return "-105%"
+            return "-100%"
         } else if (windowWidth >= 1280) {
             return "-125%"
         } else if (windowWidth >= 1024) {
@@ -94,7 +94,13 @@ export default function OfflineEvents() {
     }
 
     const x = useTransform(scrollYProgress, [0, 1], ["0%", calculateEndTransform()])
-    const smoothX = useSpring(x, { stiffness: 50, damping: 30 })
+
+    const smoothX = useSpring(x, {
+        stiffness: windowWidth < 640 ? 100 : 50,
+        damping: windowWidth < 640 ? 20 : 30,
+        mass: windowWidth < 640 ? 0.5 : 1,
+        restDelta: 0.001
+    })
 
     useEffect(() => {
         const handleResize = () => {
@@ -114,11 +120,20 @@ export default function OfflineEvents() {
 
             if (!atTop && !atBottom) {
                 event.preventDefault()
-                window.scrollBy(0, event.deltaY > 0 ? 50 : -50)
+                const scrollAmount = windowWidth < 640 ? (event.deltaY > 0 ? 30 : -30) : (event.deltaY > 0 ? 50 : -50)
+                window.scrollBy({
+                    top: scrollAmount,
+                    behavior: windowWidth < 640 ? 'auto' : 'smooth'
+                })
             }
 
             if (atBottom || atTop) {
                 setIsScrollingAllowed(false)
+                if (windowWidth < 640) {
+                    setTimeout(() => setIsScrollingAllowed(true), 100)
+                } else {
+                    setIsScrollingAllowed(true)
+                }
             } else {
                 setIsScrollingAllowed(true)
             }
@@ -126,10 +141,10 @@ export default function OfflineEvents() {
 
         window.addEventListener("wheel", handleWheel, { passive: false })
         return () => window.removeEventListener("wheel", handleWheel)
-    }, [isScrollingAllowed])
+    }, [isScrollingAllowed, windowWidth])
 
     return (
-        <section ref={containerRef} className="relative h-[300vh] sm:h-[800vh] bg-black mt-32">
+        <section ref={containerRef} className="relative h-[450vh] sm:h-[800vh] bg-black mt-32">
             <div className="sticky top-0 h-screen overflow-hidden">
                 <div className="absolute inset-0 -z-0">
                     <AnimatedGridPattern

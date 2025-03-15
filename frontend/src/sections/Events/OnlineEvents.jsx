@@ -42,8 +42,9 @@ export default function OnlineEvents() {
     })
 
     const calculateEndTransform = () => {
+        // Optimize for mobile with consistent transform values
         if (windowWidth < 640) {
-            return "-100%"
+            return "-100%" // This ensures it doesn't go too far on mobile
         } else if (windowWidth >= 1280) {
             return "-125%"
         } else if (windowWidth >= 1024) {
@@ -53,9 +54,17 @@ export default function OnlineEvents() {
         }
     }
 
+    // Note: The original has [calculateEndTransform(), "0%"] - this is the correct order for this component
+    // as it's coming in from the right instead of going to the right
     const x = useTransform(scrollYProgress, [0, 1], [calculateEndTransform(), "0%"])
 
-    const smoothX = useSpring(x, { stiffness: 50, damping: 30 })
+    // Improved spring animation settings for smoother motion on mobile
+    const smoothX = useSpring(x, {
+        stiffness: windowWidth < 640 ? 100 : 50,
+        damping: windowWidth < 640 ? 20 : 30,
+        mass: windowWidth < 640 ? 0.5 : 1, // Lower mass for mobile makes it less bouncy
+        restDelta: 0.001 // Smaller rest delta for more precise stopping
+    })
 
     useEffect(() => {
         const handleResize = () => {
@@ -67,6 +76,7 @@ export default function OnlineEvents() {
     }, [])
 
     useEffect(() => {
+        // Enhanced scroll handling for mobile
         const handleWheel = (event) => {
             if (!containerRef.current || !isScrollingAllowed) return
             const container = containerRef.current
@@ -75,11 +85,22 @@ export default function OnlineEvents() {
 
             if (!atTop && !atBottom) {
                 event.preventDefault()
-                window.scrollBy(0, event.deltaY > 0 ? 50 : -50)
+                // Smoother scrolling with smaller increments for mobile
+                const scrollAmount = windowWidth < 640 ? (event.deltaY > 0 ? 30 : -30) : (event.deltaY > 0 ? 50 : -50)
+                window.scrollBy({
+                    top: scrollAmount,
+                    behavior: windowWidth < 640 ? 'auto' : 'smooth' // Auto for mobile prevents jank
+                })
             }
 
+            // Add a small delay before allowing scrolling again on mobile
             if (atBottom || atTop) {
                 setIsScrollingAllowed(false)
+                if (windowWidth < 640) {
+                    setTimeout(() => setIsScrollingAllowed(true), 100)
+                } else {
+                    setIsScrollingAllowed(true)
+                }
             } else {
                 setIsScrollingAllowed(true)
             }
@@ -87,10 +108,10 @@ export default function OnlineEvents() {
 
         window.addEventListener("wheel", handleWheel, { passive: false })
         return () => window.removeEventListener("wheel", handleWheel)
-    }, [isScrollingAllowed])
+    }, [isScrollingAllowed, windowWidth])
 
     return (
-        <section ref={containerRef} className="relative h-[300vh] sm:h-[600vh] bg-black mt-32">
+        <section ref={containerRef} className="relative h-[450vh] sm:h-[600vh] bg-black mt-32">
             <div className="sticky top-0 h-screen overflow-hidden">
                 <div className="absolute inset-0 -z-0">
                     <AnimatedGridPattern
