@@ -16,7 +16,7 @@ export default function Winners() {
         const fetchEventsData = async () => {
             try {
                 setLoading(true)
-                const response = await fetch('http://127.0.0.1:8000/api/events', {
+                const response = await fetch('https://cultrang-hackathon-project.onrender.com/api/events', {
                     method: 'GET',
 
                 })

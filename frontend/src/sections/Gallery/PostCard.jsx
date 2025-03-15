@@ -85,7 +85,7 @@ export default function NFTGrid() {
     const fetchPosts = async () => {
       try {
         setLoading(true)
-        const response = await fetch('http://127.0.0.1:8000/api/instagram-media/', {
+        const response = await fetch('https://cultrang-hackathon-project.onrender.com/api/instagram-media/', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
