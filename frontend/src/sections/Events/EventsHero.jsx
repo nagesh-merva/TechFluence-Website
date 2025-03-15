@@ -68,7 +68,7 @@ export default function EventsHeroSection() {
             </span>
           </h1>
         </div>
-        <div className="flex flex-col md:flex-row justify-between mt-auto gap-6">
+        <div className="px-3 flex flex-col md:flex-row justify-between mt-auto gap-6">
           <div className="mt-4 sm:mt-6 md:mt-10 lg:mt-16 max-w-full md:max-w-[60%]">
             <div className="flex space-x-1">
               <div
@@ -88,7 +88,7 @@ export default function EventsHeroSection() {
                   } border-creamy transition-colors duration-300`}
               />
             </div>
-            <p className="pt-2 text-[10px] sm:text-base md:text-lg text-creamy font-semibold font-sans tracking-wider text-left leading-5 sm:leading-6">
+            <p className=" pt-2 text-[10px] sm:text-base md:text-lg text-creamy font-semibold font-sans tracking-wider text-left leading-5 sm:leading-6">
               Welcome to Techfluence, a world where the line between reality and
               digital warfare blurs. This is not just an eventâ€”itâ€™s an
               adventure, a challenge, a test of skill and survival. From the
