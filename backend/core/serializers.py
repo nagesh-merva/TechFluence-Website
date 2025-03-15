@@ -11,18 +11,18 @@ class InstagramMediaSerializer(serializers.ModelSerializer):
 
 
 
+from rest_framework import serializers
+from .models import Event, Winner
 
 class WinnerSerializer(serializers.ModelSerializer):
-    image = serializers.ImageField(use_url=True)  # Returns full URL for images
-
     class Meta:
         model = Winner
-        fields = ['id', 'name', 'prize', 'image']
+        fields = ['id', 'name', 'prize']
 
 class EventSerializer(serializers.ModelSerializer):
     winners = WinnerSerializer(many=True, read_only=True)
+    image = serializers.ImageField(use_url=True)  # Ensure full URL for images
 
     class Meta:
         model = Event
-        fields = ['id', 'name', 'description', 'winners']
-
+        fields = ['id', 'name', 'description', 'image', 'winners']
