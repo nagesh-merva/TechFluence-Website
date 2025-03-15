@@ -144,7 +144,7 @@ export default function OfflineEvents() {
     }, [isScrollingAllowed, windowWidth])
 
     return (
-        <section ref={containerRef} className="relative h-[450vh] sm:h-[800vh] bg-black mt-32">
+        <section ref={containerRef} className="relative h-[450vh] sm:h-[400vh] bg-black mt-32">
             <div className="sticky top-0 h-screen overflow-hidden">
                 <div className="absolute inset-0 -z-0">
                     <AnimatedGridPattern
