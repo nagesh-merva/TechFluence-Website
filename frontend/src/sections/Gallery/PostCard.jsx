@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const mockPosts = [
   {
@@ -77,16 +77,65 @@ const mockPosts = [
 ];
 
 export default function NFTGrid() {
+  const [posts, setPosts] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      try {
+        setLoading(true)
+        const response = await fetch('http://127.0.0.1:8000/api/instagram-media/', {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        })
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`)
+        }
+
+        const data = await response.json()
+        setPosts(data)
+        setLoading(false)
+      } catch (err) {
+        console.error("Error fetching Instagram posts:", err)
+        setError(err.message)
+        setPosts(mockPosts)
+        setLoading(false)
+      }
+    }
+
+    fetchPosts()
+  }, [])
+
+  if (loading) {
+    return (
+      <div className="bg-black min-h-screen p-6 flex justify-center items-center">
+        <div className="text-white font-mono">Loading posts...</div>
+      </div>
+    )
+  }
+
+  if (error && posts.length === 0) {
+    return (
+      <div className="bg-black min-h-screen p-6 flex justify-center items-center">
+        <div className="text-white font-mono">Error loading posts. Please try again later.</div>
+      </div>
+    )
+  }
+
   return (
     <div className="bg-black min-h-screen p-6">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {mockPosts.map((nft, index) => (
+        {posts && posts.map((nft, index) => (
           <div
             key={index}
             className="relative transition-transform hover:scale-105"
           >
 
-            <div 
+            <div
               className="relative p-0.5"
               style={{
                 background: 'linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0))',
@@ -115,8 +164,8 @@ export default function NFTGrid() {
                       </div>
                     </div>
 
-                    <div 
-                      className="flex-grow mb-4 relative overflow-hidden flex items-center justify-center" 
+                    <div
+                      className="flex-grow mb-4 relative overflow-hidden flex items-center justify-center"
                       style={{
                         background: nft.bgColor || 'rgba(30, 40, 50, 0.5)',
                         minHeight: "160px",
@@ -153,9 +202,9 @@ export default function NFTGrid() {
                         <p className="text-white text-sm font-mono">{nft.owner || '@techfluence'}</p>
                       </div>
                       <div>
-                        <a 
-                          href={nft.permalink} 
-                          target="_blank" 
+                        <a
+                          href={nft.permalink}
+                          target="_blank"
                           rel="noopener noreferrer"
                           className="text-white font-mono text-lg"
                         >

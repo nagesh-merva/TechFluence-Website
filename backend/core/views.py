@@ -36,6 +36,8 @@ def fetch_instagram_media(request):
         media_url = f"https://graph.facebook.com/v18.0/{hashtag_id}/recent_media?user_id={USER_ID}&fields=media_url,caption,media_type,permalink&access_token={ACCESS_TOKEN}"
         media_response = requests.get(media_url)
         media_data = media_response.json().get("data", [])
+        
+        print(media_data)
 
         # Step 3: Save Media Data to Database
         saved_count = 0
