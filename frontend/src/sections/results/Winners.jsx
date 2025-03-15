@@ -6,49 +6,71 @@ import WinnerAnnouncement from "@/components/events/WinnerAnnouncement"
 export default function Winners() {
     const confettiRef = useRef();
     const [isAutoPlaying, setIsAutoPlaying] = useState(true)
+    const [offlineEvents, setOfflineEvents] = useState([])
+    const [gamingEvents, setGamingEvents] = useState([])
+    const [onlineEvents, setOnlineEvents] = useState([])
+    const [loading, setLoading] = useState(false)
+    const [error, setError] = useState(null)
 
-    const events = [
-        {
-            name: "NEON ODYSSEY",
-            description: "NAVIGATE THROUGH DIGITAL LABYRINTHS IN THIS IMMERSIVE REALITY CHALLENGE.",
-            image: "/events/winners.jpg",
-            winners: [
-                { id: "001", name: "ARIA NOVA", prize: "₹12,000" },
-                { id: "002", name: "ZION FLUX", prize: "₹8,000" },
-                { id: "003", name: "ECHO PRIME", prize: "₹4,000" }
-            ],
-        },
-        {
-            name: "CYBER PULSE",
-            description: "MASTER THE CODE AND CONQUER THE VIRTUAL REALMS IN THIS ADVANCED TECH COMPETITION.",
-            image: "/events/winners.jpg",
-            winners: [
-                { id: "101", name: "NOVA BYTE", prize: "₹15,000" },
-                { id: "102", name: "PIXEL STORM", prize: "₹10,000" },
-                { id: "103", name: "QUANTUM LINK", prize: "₹5,000" }
-            ],
-        },
-        {
-            name: "NEON ODYSSEY",
-            description: "NAVIGATE THROUGH DIGITAL LABYRINTHS IN THIS IMMERSIVE REALITY CHALLENGE.",
-            image: "/events/winners.jpg",
-            winners: [
-                { id: "001", name: "ARIA NOVA", prize: "₹12,000" },
-                { id: "002", name: "ZION FLUX", prize: "₹8,000" },
-                { id: "003", name: "ECHO PRIME", prize: "₹4,000" }
-            ],
-        },
-        {
-            name: "CYBER PULSE",
-            description: "MASTER THE CODE AND CONQUER THE VIRTUAL REALMS IN THIS ADVANCED TECH COMPETITION.",
-            image: "/events/winners.jpg",
-            winners: [
-                { id: "101", name: "NOVA BYTE", prize: "₹15,000" },
-                { id: "102", name: "PIXEL STORM", prize: "₹10,000" },
-                { id: "103", name: "QUANTUM LINK", prize: "₹5,000" }
-            ],
-        },
-    ]
+    useEffect(() => {
+        const fetchEventsData = async () => {
+            try {
+                setLoading(true)
+                const response = await fetch('http://127.0.0.1:8000/api/events', {
+                    method: 'GET',
+
+                })
+
+                const data = await response.json()
+                console.log(data)
+                if (data && typeof data === 'object') {
+                    if (Array.isArray(data)) {
+                        const offline = data.filter(event => event.category === 'offline')
+                        const gaming = data.filter(event => event.category === 'gaming')
+                        const online = data.filter(event => event.category === 'online')
+
+                        setOfflineEvents(offline)
+                        setGamingEvents(gaming)
+                        setOnlineEvents(online)
+                    } else if (data.events && Array.isArray(data.events)) {
+                        const events = data.events
+                        const offline = events.filter(event => event.category === 'offline')
+                        const gaming = events.filter(event => event.category === 'gaming')
+                        const online = events.filter(event => event.category === 'online')
+
+                        setOfflineEvents(offline)
+                        setGamingEvents(gaming)
+                        setOnlineEvents(online)
+                    } else if (data.offline && data.gaming && data.online) {
+                        setOfflineEvents(Array.isArray(data.offline) ? data.offline : [])
+                        setGamingEvents(Array.isArray(data.gaming) ? data.gaming : [])
+                        setOnlineEvents(Array.isArray(data.online) ? data.online : [])
+                    } else {
+                        console.warn("Unexpected API response structure:", data)
+                        setOfflineEvents([])
+                        setGamingEvents([])
+                        setOnlineEvents([])
+                    }
+                } else {
+                    console.warn("Invalid API response:", data)
+                    setOfflineEvents([])
+                    setGamingEvents([])
+                    setOnlineEvents([])
+                }
+
+                setLoading(false)
+            } catch (err) {
+                console.error("Error fetching events data:", err)
+                setError(err.message)
+                setOfflineEvents([])
+                setGamingEvents([])
+                setOnlineEvents([])
+                setLoading(false)
+            }
+        }
+
+        fetchEventsData()
+    }, [])
 
     const fireConfetti = () => {
         if (confettiRef.current) {
@@ -79,8 +101,30 @@ export default function Winners() {
             if (intervalId) {
                 clearInterval(intervalId)
             }
-        };
+        }
     }, [isAutoPlaying])
+
+    const NoWinnersYet = () => (
+        <div className="col-span-1 sm:col-span-2 md:col-span-3 flex justify-center items-center p-12">
+            <div className="border border-gray-500/30 backdrop-blur-md bg-black/30 rounded-xl p-8 flex flex-col items-center gap-4 w-full max-w-xl">
+                <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-cyan-400 to-purple-400">
+                    COMING SOON
+                </div>
+                <div className="text-xl text-center text-gray-300 font-mono">
+                    Winners yet to be announced
+                </div>
+                <div className="mt-2 w-full h-1 bg-gradient-to-r from-purple-500 via-cyan-500 to-purple-500 rounded-full" />
+            </div>
+        </div>
+    )
+
+    if (loading) {
+        return (
+            <div className="w-full min-h-svh flex justify-center items-center bg-black">
+                <div className="text-white font-mono text-xl">Loading winners data...</div>
+            </div>
+        )
+    }
 
     return (
         <div className="w-full min-h-svh relative overflow-x-hidden">
@@ -98,9 +142,12 @@ export default function Winners() {
                     </h1>
                 </div>
                 <div className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 z-20 pt-24 pb-32">
-                    {events.map((eventData, index) => (
-                        <WinnerAnnouncement key={index} eventData={eventData} />
-                    ))}
+                    {offlineEvents.length > 0 ?
+                        offlineEvents.map((eventData, index) => (
+                            <WinnerAnnouncement key={`offline-${eventData.name}-${index}`} eventData={eventData} />
+                        )) :
+                        <NoWinnersYet />
+                    }
                 </div>
             </div>
             <div className="relative flex flex-col w-full min-h-svh">
@@ -110,9 +157,12 @@ export default function Winners() {
                     </h1>
                 </div>
                 <div className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 z-20 pt-24 pb-32">
-                    {events.map((eventData, index) => (
-                        <WinnerAnnouncement key={index} eventData={eventData} />
-                    ))}
+                    {gamingEvents.length > 0 ?
+                        gamingEvents.map((eventData, index) => (
+                            <WinnerAnnouncement key={`gaming-${eventData.name}-${index}`} eventData={eventData} />
+                        )) :
+                        <NoWinnersYet />
+                    }
                 </div>
             </div>
             <div className="relative flex flex-col w-full min-h-svh">
@@ -122,9 +172,12 @@ export default function Winners() {
                     </h1>
                 </div>
                 <div className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 z-20 pt-24 pb-32">
-                    {events.map((eventData, index) => (
-                        <WinnerAnnouncement key={index} eventData={eventData} />
-                    ))}
+                    {onlineEvents.length > 0 ?
+                        onlineEvents.map((eventData, index) => (
+                            <WinnerAnnouncement key={`online-${eventData.name}-${index}`} eventData={eventData} />
+                        )) :
+                        <NoWinnersYet />
+                    }
                 </div>
             </div>
         </div>
