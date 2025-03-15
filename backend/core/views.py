@@ -81,6 +81,7 @@ class EventListView(generics.ListAPIView):
     permission_classes = [AllowAny] 
     queryset = Event.objects.all()
     serializer_class = EventSerializer
+    parser_classes = [MultiPartParser, FormParser]
 
 class WinnerCreateView(generics.CreateAPIView):
     permission_classes = [AllowAny] 
