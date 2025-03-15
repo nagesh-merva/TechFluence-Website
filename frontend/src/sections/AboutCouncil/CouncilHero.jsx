@@ -33,7 +33,7 @@ const CouncilHero = () => {
         />
 
         {/* Fixed title positioning for mobile and desktop */}
-        <div className="px-3 absolute inset-x-0 top-1/2 -translate-y-1/2 flex flex-col items-center md:items-start md:pl-24">
+        <div className="px-6 absolute inset-x-0 top-1/2 -translate-y-1/2 flex flex-col items-center md:items-start md:pl-24">
           <HyperText className="text-5xl sm:text-6xl md:text-9xl text-creamy font-normal font-big-noodle tracking-tight text-center md:text-left mb-4">
             THE INTENSA COUNCIL
           </HyperText>

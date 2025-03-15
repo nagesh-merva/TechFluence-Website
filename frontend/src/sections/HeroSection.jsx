@@ -44,7 +44,7 @@ export default function HeroSection() {
         />
       </div>
       <div className="z-20 p-10 sm:p-10 md:p-16 lg:p-20 absolute inset-0 h-full w-full flex flex-col items-center md:items-start">
-        <div className="mt-5 h-fit w-fit px-3 sm:px-4 py-1 sm:pt-2 bg-creamy/20 border border-creamy">
+        <div className="mt-5 h-fit w-fit px-6 sm:px-4 py-1 sm:pt-2 bg-creamy/20 border border-creamy">
           <span className="text-xs sm:text-sm md:text-md text-creamy font-semibold font-space-mono tracking-wider text-center">
             DATE : 27 - 28 March 2025
           </span>
@@ -59,7 +59,7 @@ export default function HeroSection() {
             </span>
           </h1>
         </div>
-        <div className="px-3 flex flex-col md:flex-row justify-between mt-auto gap-6">
+        <div className="px-6 pb-5 flex flex-col md:flex-row justify-between mt-auto gap-6">
           <div className="mt-4 sm:mt-6 md:mt-10 lg:mt-16 max-w-full md:max-w-[60%]">
             <div className="flex space-x-1">
               <div
