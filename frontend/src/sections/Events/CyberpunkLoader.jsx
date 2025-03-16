@@ -42,11 +42,11 @@ const CyberpunkLoader = () => {
       setChatStage(3); // Cursor's second message
     }
 
-    if (progress >= 80 && chatStage === 3) {
+    if (progress >= 70 && chatStage === 3) {
       setChatStage(4); // Cursor's third message
     }
 
-    if (progress >= 90 && chatStage === 4) {
+    if (progress >= 80 && chatStage === 4) {
       setChatStage(5); // TF's final message
       setCursorAnimation(false);
       const audio = new Audio()
@@ -141,9 +141,9 @@ const CyberpunkLoader = () => {
             )}
 
             {chatStage >= 5 && (
-              <div className="mb-3 flex items-center">
+              <div className="mb-3 flex  items-center">
                 <span className="text-green-400 mr-2">TF: </span>
-                <span>Too late.... ლ(｀∀´ლ)</span>
+                <p className="md:flex items-center w-full">System Crashed,<MousePointer2 size={12} color="white" /> Stuck... Again ლ(｀∀´ლ)</p>
               </div>
             )}
 
