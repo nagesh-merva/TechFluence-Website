@@ -24,9 +24,9 @@ export default function Aboutus() {
       </div>
 
       {/* Content Container */}
-      <div className="relative z-10 mt-20 w-full flex flex-col md:flex-row items-center md:items-start px-4 sm:px-6 md:px-10 gap-10">
+      <div className="relative z-10 mt-20 w-full flex flex-col md:flex-row items-center px-4 sm:px-6 md:px-10 gap-10">
         {/* Left Side - Image */}
-        <div className="w-full md:w-5/12 flex justify-center md:justify-start">
+        <div className="w-full md:w-5/12 h-auto flex justify-center md:justify-start">
           <img
             src="/main/WebsiteLogo.gif"
             alt="Techfluence Visual"
