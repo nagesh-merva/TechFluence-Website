@@ -4,95 +4,95 @@ const CouncilMembers = () => {
   // Member details array with 18 council members
   const memberDetails = [
     {
-      img: "/events/Anurag.jpg",
+      img: "/about/Anurag.jpg",
       name: "Anurag Singh",
       designation: "Chairman",
     },
     {
-      img: "/events/Shivam.jpeg",
+      img: "/about/Shivam.jpeg",
       name: "Shivam Shirodkar",
       designation: "General Secretary",
     },
     {
-      img: "/events/Yash.jpg",
+      img: "/about/Yash.jpg",
       name: "Yash Gaonkar",
       designation: "Treasurer",
     },
     {
-      img: "/events/Raj.jpeg",
+      img: "/about/Raj.jpeg",
       name: "Raj Shirodkar",
       designation: "Cultural Executive",
     },
     {
-      img: "/events/Onkar.jpeg",
+      img: "/about/Onkar.jpeg",
       name: "Onkar Govekar",
       designation: "Talent Executive",
     },
     {
-      img: "/events/Sidhant.jpeg",
+      img: "/about/Sidhant.jpeg",
       name: "Sidhant Naik",
       designation: "Technical Secretary",
     },
 
     {
-      img: "/events/Bhavi.jpeg",
+      img: "/about/Bhavi.jpeg",
       name: "Bhavi Naik",
       designation: "Placement Executive",
     },
     {
-      img: "/events/Ritesh.jpeg",
+      img: "/about/Ritesh.jpeg",
       name: "Ritesh Naik",
       designation: "Event Executive",
     },
 
     {
-      img: "/events/Meher.jpeg",
+      img: "/about/Meher.jpeg",
       name: "Meher Aga",
       designation: "Magazine Executive",
     },
     {
-      img: "/events/Sahil.jpeg",
+      img: "/about/Sahil.jpeg",
       name: "Sahil Kumar",
       designation: "Sports Evecutive",
     },
     {
-      img: "/events/Brisen.jpeg",
+      img: "/about/Brisen.jpeg",
       name: "Brisen Whyte",
       designation: "BE Executive",
     },
     {
-      img: "/events/Atharv.jpeg",
+      img: "/about/Atharv.jpeg",
       name: "Atharv Desai ",
       designation: "BE Executive",
     },
     {
-      img: "/events/Tanmay.jpeg",
+      img: "/about/Tanmay.jpeg",
       name: "Tanmay Gawas",
       designation: "TE Executive",
     },
     {
-      img: "/events/Maithili.jpeg",
+      img: "/about/Maithili.jpeg",
       name: "Maithili Chavan",
       designation: "TE Executive",
     },
     {
-      img: "/events/Aditya.jpg",
+      img: "/about/Aditya.jpg",
       name: "Aditiya Vernekar",
       designation: "SE Executive",
     },
     {
-      img: "/events/Noel.jpeg",
+      img: "/about/Noel.jpeg",
       name: "Noel D'Costa",
       designation: "SE Executive",
     },
 
     {
-      img: "/events/Priyam.jpg",
+      img: "/about/Priyam.jpg",
       name: "Priyam Redkar",
       designation: "FE Executive",
     },
     {
-      img: "/events/Goraksh.jpeg",
+      img: "/about/Goraksh.jpeg",
       name: "Goraksh Rasaikar",
       designation: "FE Executive",
     },
@@ -101,9 +101,9 @@ const CouncilMembers = () => {
   return (
     <div className="py-16 bg-black text-white">
       <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-12">Council Members</h2>
+        <h2 className="text-3xl font-bold mb-12 text-center">Council Members</h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
           {memberDetails.map((member, index) => (
             <div key={index} className="flex flex-col items-center">
               <div className="w-40 h-40 rounded-full overflow-hidden mb-4">

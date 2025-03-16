@@ -1,5 +1,5 @@
 const playNavSound = (type) => {
-    console.log(`Playing sound: ${type}`)
+    // console.log(`Playing sound: ${type}`)
 
     const audio = new Audio()
     audio.volume = 0.3
@@ -21,7 +21,7 @@ const playNavSound = (type) => {
             break;
     }
 
-    audio.play().catch(e => console.log('Audio play prevented by browser'))
+    audio.play()
 }
 
 export default playNavSound

@@ -37,10 +37,7 @@ const CouncilHero = () => {
             CYBER ARCHIVES
           </HyperText>
           <p className="text-lg sm:text-2xl md:text-lg max-w-[90%] sm:max-w-[70%] md:max-w-[50%] text-creamy font-normal tracking-tight text-center md:text-left">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate
-            est aperiam soluta? Vel, ipsa et magni magnam harum ducimus minus
-            saepe aut repellat minima at nam illum accusantium, aliquid
-            perferendis.
+            Welcome to our Events Gallery! Explore a curated collection of captivating moments captured during our events. From inspiring talks to engaging workshops, our gallery showcases the vibrant energy and creativity that define our community. Dive into the visual journey and relive the highlights of our past events.
           </p>
         </div>
       </div>
