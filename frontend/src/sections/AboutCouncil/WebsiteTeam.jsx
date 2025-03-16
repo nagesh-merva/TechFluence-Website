@@ -29,7 +29,7 @@ const WebsiteTeam = () => {
       designation: "Designer",
     },
     {
-      img: "/about/Meher.jpeg",
+      img: "/about/Yash_nyk.jpg",
       name: "Yash Naik",
       designation: "Designer",
     },
