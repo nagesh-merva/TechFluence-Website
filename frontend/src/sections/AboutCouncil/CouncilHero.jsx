@@ -33,15 +33,12 @@ const CouncilHero = () => {
         />
 
         {/* Fixed title positioning for mobile and desktop */}
-        <div className=" absolute inset-x-0 top-1/2 -translate-y-1/2 flex flex-col items-center md:items-start md:pl-24">
-          <HyperText className="text-5xl sm:text-6xl md:text-9xl text-creamy font-normal font-big-noodle tracking-tight text-center md:text-left mb-4">
+        <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 flex flex-col items-center md:items-start md:pl-24">
+          <HyperText className="text-7xl sm:text-6xl md:text-9xl text-creamy font-normal font-big-noodle tracking-tight text-center md:text-left mb-4">
             THE INTENSA COUNCIL
           </HyperText>
           <p className=" text-lg sm:text-2xl md:text-lg max-w-[90%] sm:max-w-[70%] md:max-w-[50%] text-creamy font-normal tracking-tight text-center md:text-left">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate
-            est aperiam soluta? Vel, ipsa et magni magnam harum ducimus minus
-            saepe aut repellat minima at nam illum accusantium, aliquid
-            perferendis.
+            The Intensa Council of the Information Technology Department at GEC was established in 2010. It aims to foster innovation, collaboration, and excellence among students and faculty. The council organizes various events, workshops, and seminars to enhance the technical skills and knowledge of its members.
           </p>
         </div>
       </div>

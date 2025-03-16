@@ -60,7 +60,7 @@ export default function OfflineEvents() {
             image: "/events/debate.jpg",
             description: "Engage in thought-provoking debates. Can you win the argument with the power of your words?",
             prizes: ["₹3,750", "₹2,750"],
-            link: 'https://lu.ma/vyo5knj6a'
+            link: 'https://lu.ma/vyo5knj6'
         },
         {
             id: 8,

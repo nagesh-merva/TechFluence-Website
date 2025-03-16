@@ -22,7 +22,7 @@ export default function Winners() {
                 })
 
                 const data = await response.json()
-                console.log(data)
+                // console.log(data)
                 if (data && typeof data === 'object') {
                     if (Array.isArray(data)) {
                         const offline = data.filter(event => event.category === 'offline')

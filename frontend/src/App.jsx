@@ -3,6 +3,7 @@ import LandingPage from "./pages/LandingPage";
 import EventsPage from "./pages/EventsPage";
 import ResultsPage from "./pages/ResultsPage";
 import AboutCouncil from "./pages/AboutCouncil";
+import SchedulePage from "./pages/SchedulePage";
 import CyberpunkLoader from "@/sections/Events/CyberpunkLoader";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -44,6 +45,7 @@ function App() {
         <Route index path="/results" element={<ResultsPage />} />
         <Route index path="/aboutus" element={<AboutCouncil />} />
         <Route index path="/gallery" element={<GalleryPage />} />
+        <Route index path="/schedule" element={<SchedulePage />} />
       </Routes>
     </div>
   );
