@@ -85,13 +85,6 @@ const Footer = () => {
                                 <Calendar size={16} />
                                 <span className="font-space-mono">SCHEDULE</span>
                             </a>
-                            <a
-                                href="/merchandise"
-                                className="flex items-center space-x-2 text-creamy/80 hover:text-creamy transition-colors duration-200"
-                            >
-                                <ShoppingBag size={16} />
-                                <span className="font-space-mono">MERCHANDISE</span>
-                            </a>
                         </nav>
                     </div>
                     <div className="flex flex-col items-center md:items-start space-y-6">

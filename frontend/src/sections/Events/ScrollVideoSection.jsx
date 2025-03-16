@@ -144,11 +144,6 @@ const ScrollVideoSection = () => {
               {/* Semi-transparent overlay for better button visibility */}
               <div className="absolute inset-0 bg-black bg-opacity-40 z-20"></div>
               {/* Full size image overlay for vertical video */}
-              <img
-                src="/events/BG12.png"
-                alt="Video preview"
-                className="absolute inset-0 w-full h-full object-cover z-20 "
-              />
               {/* Full size image overlay */}
               <div
                 className="absolute inset-0 w-full h-full bg-cover bg-center z-20"
