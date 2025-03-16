@@ -28,7 +28,7 @@ export default function Aboutus() {
         {/* Left Side - Image */}
         <div className="w-full md:w-5/12 flex justify-center md:justify-start">
           <img
-            src="/main/logo.gif"
+            src="/main/WebsiteLogo.gif"
             alt="Techfluence Visual"
             className="h-full w-full rounded-2xl object-contain"
           />
