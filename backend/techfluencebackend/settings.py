@@ -32,6 +32,8 @@ ALLOWED_HOSTS = ["*"]
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "http://127.0.0.1:5173",
+    "https://www.techfluence2025.in",
+    "https://techfluence2025.in"
 ]
 # CORS_ALLOW_ALL_ORIGINS = True
 # Application definition
