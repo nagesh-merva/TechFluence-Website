@@ -64,7 +64,7 @@ export default function SchedulePage() {
             <br className="hidden md:block" />
             <span className="md:hidden"> </span>
             <span className="md:block text-5xl sm:text-6xl md:text-7xl">
-              <HyperText className="inherit">COMING</HyperText>
+              <HyperText className="inherit">COMING SOON</HyperText>
             </span>
           </h1>
         </div>

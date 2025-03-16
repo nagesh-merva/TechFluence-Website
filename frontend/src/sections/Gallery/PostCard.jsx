@@ -85,13 +85,20 @@ export default function NFTGrid() {
     const fetchPosts = async () => {
       try {
         setLoading(true)
+        const res = await fetch('https://techfluence-website.onrender.com/api/fetch-instagram/', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        })
+        console.log(res)
         const response = await fetch('https://techfluence-website.onrender.com/api/instagram-media/', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
           },
         })
-
+        console.log(response)
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`)
         }
