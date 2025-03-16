@@ -20,10 +20,10 @@ const RetroNavbar = ({ isOpen, onClose }) => {
 
   const navLinks = [
     { id: '/', label: 'HOME' },
+    { id: '/aboutus', label: 'ABOUT' },
     { id: '/events', label: 'EVENTS' },
     { id: '/results', label: 'RESULTS' },
     { id: '/gallery', label: 'GALLERY' },
-    { id: '/aboutus', label: 'ABOUT' },
   ]
 
   const colors = {
