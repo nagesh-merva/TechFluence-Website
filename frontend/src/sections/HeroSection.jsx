@@ -80,13 +80,7 @@ export default function HeroSection() {
               />
             </div>
             <p className="pt-2 text-[10px] sm:text-base md:text-lg text-creamy font-semibold font-sans tracking-wider text-left leading-5 sm:leading-6">
-              Welcome to Techfluence, a world where the line between reality and
-              digital warfare blurs. This is not just an event its an
-              adventure, a challenge, a test of skill and survival. From the
-              moment you step into this realm, you are no longer just an
-              observer. You are a navigator, thrown into an unpredictable world
-              teeming with challenges, enemies lurking in the shadows, and
-              obstacles designed to push you beyond your limits.
+              Techfluence is a vibrant fusion of cultures and technology, reflecting not just on institution, but the spirit of an entire nation. It aims at instilling a sense of belongingness by being a melting pot of ideas open to students of all disciplines. With intriguing events and competitions along with resourceful workshops by experts and professionals, Techfluence 25 is all set to be an enthralling experience for everyone involved.
             </p>
           </div>
           <div className="relative h-fit w-full md:w-fit p-3 sm:p-4 md:p-5 scale-[65%] md:scale-100 md:place-self-end">

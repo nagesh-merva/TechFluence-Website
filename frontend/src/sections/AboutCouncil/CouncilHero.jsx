@@ -38,7 +38,7 @@ const CouncilHero = () => {
             THE INTENSA COUNCIL
           </HyperText>
           <p className=" text-lg sm:text-2xl md:text-lg max-w-[90%] sm:max-w-[70%] md:max-w-[50%] text-creamy font-normal tracking-tight text-center md:text-left">
-            The Intensa Council of the Information Technology Department at GEC was established in 2010. It aims to foster innovation, collaboration, and excellence among students and faculty. The council organizes various events, workshops, and seminars to enhance the technical skills and knowledge of its members.
+            INTENSA, The Information Technology Engineering Students Association is a council consisting of several representatives working diligently towards creating newer opportunities for students with respect to both technology and conventional attitudes while keeping alive traits of integrity, ethics and virtue. We strongly believe in fostering an ecosystem that allows pragmatic imbibition of knowledge within individuals.
           </p>
         </div>
       </div>
