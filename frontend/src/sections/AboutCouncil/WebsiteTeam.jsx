@@ -3,39 +3,39 @@ import React from "react";
 const WebsiteTeam = () => {
   const memberDetails = [
     {
-      img: "/events/nagesh.jpg",
+      img: "/about/nagesh.jpg",
       name: "Nagesh Merva",
       designation: "Developer",
     },
     {
-      img: "/events/AmithFormals.jpeg",
+      img: "/about/AmithFormals.jpeg",
       name: "Amith Kumar",
       designation: "Developer",
     },
 
     {
-      img: "/events/NewAryan.jpeg",
+      img: "/about/NewAryan.jpeg",
       name: "Aryan Naik",
       designation: "Developer",
     },
     {
-      img: "/events/Nishka.jpeg",
+      img: "/about/Nishka.jpeg",
       name: "Nishka Naik",
       designation: "Designer",
     },
     {
-      img: "/events/Meher.jpeg",
+      img: "/about/Meher.jpeg",
       name: "Meher Aga",
       designation: "Designer",
     },
     {
-      img: "/events/Meher.jpeg",
+      img: "/about/Meher.jpeg",
       name: "Yash Naik",
       designation: "Designer",
     },
 
     {
-      img: "/events/Onkar.jpeg",
+      img: "/about/Sumit.jpeg",
       name: "Sumeet Yadav",
       designation: "Graphic Designer & Video Editor",
     },
@@ -46,7 +46,7 @@ const WebsiteTeam = () => {
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-3xl font-bold mb-12">Website Team</h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
+          <div className="grid grid-cols-2 p-3 sm:grid-cols-2  md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
             {memberDetails.map((member, index) => (
               <div key={index} className="flex flex-col items-center">
                 <div className="w-40 h-40 rounded-full overflow-hidden mb-4">

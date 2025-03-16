@@ -111,7 +111,7 @@ const ScrollVideoSection = () => {
   };
 
   return (
-    <section className="relative h-screen w-full" id="event-video-section">
+    <section className="relative  h-full w-full" id="event-video-section">
       {/* This is the trigger section that will be replaced by the video */}
       {!isFullyShown && (
         <div
@@ -135,8 +135,7 @@ const ScrollVideoSection = () => {
           <video
             ref={videoRef}
             className="w-full h-full object-cover"
-            src="/events/TestVideo.mp4"
-            poster="/events/TechfluenceLogo.png"
+            src="/events/TF.mp4"
             playsInline
             autoPlay
             muted
@@ -149,11 +148,21 @@ const ScrollVideoSection = () => {
               <div className="absolute inset-0 bg-black bg-opacity-40 z-20"></div>
 
               {/* Full size image overlay */}
-              <img
-                src="/events/BG12.png"
-                alt="Video preview"
-                className="absolute inset-0 w-full h-full object-cover z-20"
-              />
+              <div
+                className="absolute inset-0 w-full h-full bg-cover bg-center z-20"
+                style={{ backgroundImage: "url('/events/final5.png')" }}
+              >
+                {/* Text overlay for EVENTS title, positioned to match the example image */}
+                <div className="absolute inset-0 flex flex-col justify-center px-12 md:px-24 pb-32">
+                  <h1 className="text-7xl md:text-8xl lg:text-9xl font-bold text-white tracking-wider">
+                    EVENTS
+                  </h1>
+                  <div className="h-0.5 bg-green-700 w-64 md:w-96 lg:w-[30rem] mt-2"></div>
+                  <h2 className="text-xl md:text-3xl font-light ml-2 text-white tracking-wider mt-2">
+                    TO THE FUTURE UNSEEN
+                  </h2>
+                </div>
+              </div>
 
               {/* Replay button - position adjusted for rotation */}
               <button
@@ -227,12 +236,12 @@ const ScrollVideoSection = () => {
 
           {/* Scroll indicator - position adjusted for rotation */}
           {videoEnded && canScroll && !userHasScrolled && (
-            <div className="absolute bottom-8 right-0 left-0 sm:top-8 sm:bottom-auto md:bottom-8 md:top-auto text-center text-creamy z-30">
+            <div className="absolute bottom-8 right-0 left-0 sm:top-8 sm:bottom-auto md:bottom-8 md:top-auto text-center text-white z-30">
               <div className="animate-bounce">
                 <p className="text-lg font-space-mono">
                   Scroll down to continue
                 </p>
-                <div className="mx-auto mt-2 w-6 h-6 border-b-2 border-r-2 border-creamy transform rotate-45 sm:rotate-225 md:rotate-45"></div>
+                <div className="mx-auto mt-2 w-6 h-6 border-b-2 border-r-2 border-white transform rotate-45 sm:rotate-225 md:rotate-45"></div>
               </div>
             </div>
           )}

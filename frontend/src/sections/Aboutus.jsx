@@ -8,7 +8,7 @@ import { BoxReveal } from "@/components/magicui/box-reveal";
 
 export default function Aboutus() {
   return (
-    <div className="relative w-full py-12 overflow-hidden ">
+    <div className="relative w-full py-20 overflow-hidden  ">
       {/* Background Grid Pattern */}
       <div className="absolute inset-0 z-0">
         <AnimatedGridPattern
@@ -24,7 +24,7 @@ export default function Aboutus() {
       </div>
 
       {/* Content Container */}
-      <div className="relative z-10 w-full flex flex-col md:flex-row items-center md:items-start px-4 sm:px-6 md:px-10 gap-10">
+      <div className="relative z-10 mt-20 w-full flex flex-col md:flex-row items-center md:items-start px-4 sm:px-6 md:px-10 gap-10">
         {/* Left Side - Image */}
         <div className="w-full md:w-5/12 flex justify-center md:justify-start">
           <img

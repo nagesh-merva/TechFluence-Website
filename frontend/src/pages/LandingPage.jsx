@@ -16,7 +16,7 @@ export default function LandingPage() {
   }, [pathname]);
 
   return (
-    <div className="h-full w-full bg-black space-y-10 sm:space-y-16 md:space-y-24">
+    <div className="h-full w-full bg-black  ">
       <HeroSection />
       <Aboutus />
       <ScrollVideoSection />
