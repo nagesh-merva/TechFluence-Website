@@ -37,7 +37,7 @@ const coins = [
   {
     id: 7,
     src: "/main/coins/7.png",
-    style: { top: "70vh", left: "20vw", width: "clamp(100px, 14vw, 227px)" },
+    style: { bottom: "5vh", left: "20vw", width: "clamp(100px, 14vw, 227px)" },
   },
   {
     id: 8,
