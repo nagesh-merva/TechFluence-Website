@@ -18,7 +18,9 @@ export default function Winners() {
                 setLoading(true)
                 const response = await fetch('https://techfluence-website.onrender.com/api/events', {
                     method: 'GET',
-
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
                 })
 
                 const data = await response.json()
