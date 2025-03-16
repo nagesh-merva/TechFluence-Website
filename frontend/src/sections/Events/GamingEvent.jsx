@@ -75,7 +75,7 @@ export default function GamingEvents() {
 
     const calculateEndTransform = () => {
         if (windowWidth < 640) {
-            return "-100%"
+            return "-105%"
         } else if (windowWidth >= 1280) {
             return "-125%"
         } else if (windowWidth >= 1024) {
