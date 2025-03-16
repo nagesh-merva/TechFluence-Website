@@ -143,7 +143,7 @@ const CyberpunkLoader = () => {
             {chatStage >= 5 && (
               <div className="mb-3 flex  items-center">
                 <span className="text-green-400 mr-2">TF: </span>
-                <p className="flex flex-col md:flex-row md:items-center w-full "><span className="flex items-center md:pr-2">System Crashed,  <MousePointer2 size={12} color="white" /></span>  Stuck... Again ლ(｀∀´ლ)</p>
+                <p className="flex flex-col md:flex-row md:items-center w-full "><span className="flex items-center md:pr-2">System Crashed  <MousePointer2 size={12} color="white" /></span>  Stuck... Again ლ(｀∀´ლ)</p>
               </div>
             )}
 
