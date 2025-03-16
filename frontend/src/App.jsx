@@ -15,7 +15,14 @@ function App() {
     window.scrollTo(0, 0)
   }, [pathname])
 
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(() => {
+    const sessionLoading = sessionStorage.getItem('loading')
+    return sessionLoading ? JSON.parse(sessionLoading) : true
+  })
+
+  useEffect(() => {
+    sessionStorage.setItem('loading', JSON.stringify(loading))
+  }, [loading])
 
   useEffect(() => {
     const timer = setTimeout(() => {

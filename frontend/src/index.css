@@ -2,6 +2,29 @@
 
 @plugin "tailwindcss-animate";
 
+::-webkit-scrollbar {
+  width: 0.5px;
+  height: 0.5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(26, 26, 26, 0.5);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(26, 26, 26, 0.5);
+}
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(26, 26, 26, 0.5) transparent;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme press-start {
@@ -244,6 +267,7 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
