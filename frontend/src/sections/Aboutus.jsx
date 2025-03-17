@@ -53,7 +53,7 @@ export default function Aboutus() {
             by="word"
             className="text-creamy text-base sm:text-lg md:text-xl font-normal leading-relaxed"
           >
-            TTechfluence 2025 is more than a tech fest—it is a dynamic fusion of cultures, ideas, and innovation, embodying the nation’s progressive spirit. Bringing together students from diverse fields, it fosters collaboration and a shared sense of purpose. By uniting creative minds, aspiring technologists, and industry leaders, Techfluence sparks innovation, challenges boundaries, and unlocks new possibilities.
+            Techfluence 2025 is more than a tech fest—it is a dynamic fusion of cultures, ideas, and innovation, embodying the nation’s progressive spirit. Bringing together students from diverse fields, it fosters collaboration and a shared sense of purpose. By uniting creative minds, aspiring technologists, and industry leaders, Techfluence sparks innovation, challenges boundaries, and unlocks new possibilities.
           </TextAnimate>
 
           <TextAnimate
