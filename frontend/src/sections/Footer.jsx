@@ -18,7 +18,7 @@ const Footer = () => {
     }, [])
 
     return (
-        <footer className="w-full sm:h-[320px] relative bg-black border-t border-creamy/30 overflow-hidden">
+        <footer className="w-full sm:h-[360px] relative bg-black border-t border-creamy/30 overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
                 {Array.from({ length: 250 }).map((_, i) => (
                     <div
@@ -77,6 +77,20 @@ const Footer = () => {
                             >
                                 <Ticket size={16} />
                                 <span className="font-space-mono">EVENTS</span>
+                            </a>
+                            <a
+                                href="/results"
+                                className="flex items-center space-x-2 text-creamy/80 hover:text-creamy transition-colors duration-200"
+                            >
+                                <Ticket size={16} />
+                                <span className="font-space-mono">RESULTS</span>
+                            </a>
+                            <a
+                                href="/aboutus"
+                                className="flex items-center space-x-2 text-creamy/80 hover:text-creamy transition-colors duration-200"
+                            >
+                                <Ticket size={16} />
+                                <span className="font-space-mono">ABOUT</span>
                             </a>
                             <a
                                 href="/schedule"
