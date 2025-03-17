@@ -42,13 +42,15 @@ def fetch_instagram_media(request):
         # Step 3: Save Media Data to Database
         saved_count = 0
         for media in media_data:
+            print (media)
             media_id = media.get("id")
             media_type = media.get("media_type")
-            media_url = media.get("media_url")
             caption = media.get("caption", "")
             permalink = media.get("permalink")
+            media_url = media.get("media_url",permalink)
 
             if not InstagramMedia.objects.filter(media_id=media_id).exists():
+                
                 InstagramMedia.objects.create(
                     media_id=media_id,
                     media_type=media_type,
