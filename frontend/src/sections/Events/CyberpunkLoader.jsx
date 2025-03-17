@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { MousePointer2 } from "lucide-react";
+import { MousePointer } from "lucide-react";
 import playNavSound from "@/components/PlaySound";
 
 const CyberpunkLoader = () => {
@@ -116,7 +116,7 @@ const CyberpunkLoader = () => {
             {chatStage >= 2 && (
               <div className="mb-3 flex items-center">
                 <span className="text-blue-400 flex items-center mr-2">
-                  <MousePointer2 size={12} color="white" />:
+                  <MousePointer size={12} color="white" />:
                 </span>
                 <span>No..not ready</span>
               </div>
@@ -125,7 +125,7 @@ const CyberpunkLoader = () => {
             {chatStage >= 3 && (
               <div className="mb-3 flex items-center">
                 <span className="text-blue-400 flex items-center mr-2">
-                  <MousePointer2 size={12} color="white" />:
+                  <MousePointer size={12} color="white" />:
                 </span>
                 <span>We are not ready!!</span>
               </div>
@@ -134,7 +134,7 @@ const CyberpunkLoader = () => {
             {chatStage >= 4 && (
               <div className="mb-3 flex items-center">
                 <span className="text-blue-400 flex items-center mr-2">
-                  <MousePointer2 size={12} color="white" />:
+                  <MousePointer size={12} color="white" />:
                 </span>
                 <span>Not ready!! (ಥ﹏ಥ)</span>
               </div>
@@ -143,7 +143,7 @@ const CyberpunkLoader = () => {
             {chatStage >= 5 && (
               <div className="mb-3 flex  items-center">
                 <span className="text-green-400 mr-2">TF: </span>
-                <p className="flex flex-col md:flex-row md:items-center w-full "><span className="flex items-center md:pr-2 md:space-x-2"><span>System Crashed,</span>  <MousePointer2 size={12} color="white" /></span>  Stuck... Again (≖_≖)</p>
+                <p className="flex flex-col md:flex-row md:items-center w-full "><span className="flex items-center md:pr-2 md:space-x-2"><span>System Crashed,</span>  <MousePointer size={12} color="white" /></span>  Stuck... Again (≖_≖)</p>
               </div>
             )}
 
