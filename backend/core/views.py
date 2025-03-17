@@ -20,46 +20,42 @@ HASHTAGNAME = config("HASHTAGNAME")
 @permission_classes([AllowAny])  # ✅ Allow access to anyone
 def fetch_instagram_media(request):
     """
-    Fetch Instagram posts by hashtag and store them in the database.
+    Fetch Instagram posts using the Graph API and store them in the database.
     """
     try:
-        # Step 1: Get Hashtag ID
-        hashtag_url = f"https://graph.facebook.com/v18.0/ig_hashtag_search?user_id={USER_ID}&q={HASHTAGNAME}&access_token={ACCESS_TOKEN}"
-        hashtag_response = requests.get(hashtag_url)
-        hashtag_data = hashtag_response.json()
-        
-        hashtag_id = hashtag_data.get('data', [{}])[0].get('id')
-        if not hashtag_id:
-            return Response({"error": "Hashtag ID not found"}, status=status.HTTP_400_BAD_REQUEST)
-
-        # Step 2: Fetch Media using Hashtag ID
-        media_url = f"https://graph.facebook.com/v18.0/{hashtag_id}/recent_media?user_id={USER_ID}&fields=media_url,caption,media_type,permalink&access_token={ACCESS_TOKEN}"
+        # Step 1: Fetch Media
+        media_url = f"https://graph.facebook.com/v19.0/{USER_ID}/media?fields=media_url,media_type,permalink,timestamp&access_token={ACCESS_TOKEN}"
         media_response = requests.get(media_url)
         media_data = media_response.json().get("data", [])
-        
-        print(media_data)
 
-        # Step 3: Save Media Data to Database
+        if not media_data:
+            return Response({"message": "No media found"}, status=status.HTTP_204_NO_CONTENT)
+
+        # Step 2: Save Media Data to Database (only if all required keys exist)
         saved_count = 0
         for media in media_data:
-            media_id = media.get("id")
-            media_type = media.get("media_type")
-            media_url = media.get("media_url")
-            caption = media.get("caption", "")
-            permalink = media.get("permalink")
+            if all(key in media for key in ["media_url", "media_type", "permalink"]):  # ✅ Skip incomplete data
+                media_id = media.get("id")
+                media_url = media.get("media_url")
+                media_type = media.get("media_type")
+                permalink = media.get("permalink")
+                imagetime = media.get("timestamp")
+                # like_count = media.get("like_count", 0)  # Default to 0 if missing
 
-            if not InstagramMedia.objects.filter(media_id=media_id).exists():
-                InstagramMedia.objects.create(
-                    media_id=media_id,
-                    media_type=media_type,
-                    media_url=media_url,
-                    caption=caption,
-                    permalink=permalink
-                )
-                saved_count += 1
+                # Ensure media is not duplicated
+                if not InstagramMedia.objects.filter(media_id=media_id).exists():
+                    InstagramMedia.objects.create(
+                        media_id=media_id,
+                        media_url=media_url,
+                        media_type=media_type,
+                        permalink=permalink,
+                        imagetime=imagetime,
+                        # like_count=like_count
+                    )
+                    saved_count += 1
 
         return Response({"message": f"Successfully fetched {saved_count} new Instagram posts"}, status=status.HTTP_201_CREATED)
-    
+
     except Exception as e:
         return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 

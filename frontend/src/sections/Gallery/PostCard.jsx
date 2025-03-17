@@ -77,53 +77,78 @@ const mockPosts = [
 ];
 
 export default function NFTGrid() {
-  const [posts, setPosts] = useState([])
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(null)
-  console.log(posts.length)
+  const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [sortOrder, setSortOrder] = useState('desc'); // 'desc' for newest first, 'asc' for oldest first
 
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        setLoading(true)
+        setLoading(true);
         const res = await fetch('https://techfluence-website.onrender.com/api/fetch-instagram/', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
-        })
-        console.log(res)
+        });
+        console.log(res);
         const response = await fetch('https://techfluence-website.onrender.com/api/instagram-media/', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
           },
-        })
-        console.log(response)
+        });
+        console.log(response.data);
         if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`)
+          throw new Error(`HTTP error! Status: ${response.status}`);
         }
 
-        const data = await response.json()
-        setPosts(data)
-        setLoading(false)
-      } catch (err) {
-        console.error("Error fetching Instagram posts:", err)
-        setError(err.message)
-        setPosts(mockPosts)
-        setLoading(false)
-      }
-    }
+        const data = await response.json();
+        console.log(data);
 
-    fetchPosts()
-  }, [])
+        // Sort the posts based on imagetime
+        const sortedData = sortPostsByImagetime(data, sortOrder);
+        setPosts(sortedData);
+        setLoading(false);
+      } catch (err) {
+        console.error("Error fetching Instagram posts:", err);
+        setError(err.message);
+        // Sort the mock posts based on imagetime
+        const sortedMockPosts = sortPostsByImagetime(mockPosts, sortOrder);
+        setPosts(sortedMockPosts);
+        setLoading(false);
+      }
+    };
+
+    fetchPosts();
+  }, [sortOrder]);
+
+  // Function to sort posts by imagetime
+  const sortPostsByImagetime = (postsArray, order) => {
+    return [...postsArray].sort((a, b) => {
+      const dateA = new Date(a.imagetime);
+      const dateB = new Date(b.imagetime);
+
+      if (order === 'asc') {
+        return dateA - dateB; // Oldest first
+      } else {
+        return dateB - dateA; // Newest first
+      }
+    });
+  };
+
+  // Function to toggle sort order
+  const toggleSortOrder = () => {
+    setSortOrder(sortOrder === 'desc' ? 'asc' : 'desc');
+  };
 
   if (loading) {
     return (
       <div className="bg-black min-h-screen p-6 flex justify-center items-center">
         <div className="text-white font-mono">Loading posts...</div>
       </div>
-    )
+    );
   }
 
   if (posts.length === 0) {
@@ -131,29 +156,34 @@ export default function NFTGrid() {
       <div className="bg-black min-h-screen p-6 flex justify-center items-center">
         <div className="text-white font-mono">NO POSTS YET. COMMING SOON!</div>
       </div>
-    )
+    );
   }
 
   return (
     <div className="bg-black min-h-screen p-6">
+      <div className="flex justify-between items-center mb-6">
+        <h2 className="text-white font-mono text-xl">Instagram Posts</h2>
+        <button
+          onClick={toggleSortOrder}
+          className="bg-transparent border border-white text-white px-4 py-2 font-mono text-sm hover:bg-gray-800"
+        >
+          Sort: {sortOrder === 'desc' ? 'Newest First' : 'Oldest First'}
+        </button>
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {posts && posts.map((nft, index) => (
           <div
             key={index}
             className="relative transition-transform hover:scale-105"
           >
-
             <div
               className="relative p-0.5"
               style={{
                 background: 'linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0))',
               }}
             >
-
               <div className="bg-transparent relative">
-
                 <div className="absolute top-0 left-0 border-t-[20px] border-l-[20px] border-transparent border-t-black border-l-black"></div>
-
                 <div className="absolute top-0 right-0 border-t-[20px] border-r-[20px] border-transparent border-t-black border-r-black"></div>
 
                 <div className="relative min-h-[300px] p-6" style={{
@@ -162,9 +192,7 @@ export default function NFTGrid() {
                   boxShadow: 'inset 0 0 30px rgba(100, 200, 200, 0.1)',
                   backgroundColor: 'transparent'
                 }}>
-
                   <div className="h-full flex flex-col">
-
                     <div className="mb-4">
                       <h3 className="text-white text-lg font-mono tracking-wider">{nft.name || `Post ${index + 1}`}</h3>
                       <div className="h-0.5 bg-gray-500 w-full relative mt-1">
@@ -220,11 +248,15 @@ export default function NFTGrid() {
                         </a>
                       </div>
                     </div>
+
+                    {/* Display the post date */}
+                    <div className="mt-2 text-gray-400 text-xs font-mono">
+                      {nft.imagetime ? new Date(nft.imagetime).toLocaleDateString() : 'Date unknown'}
+                    </div>
                   </div>
                 </div>
 
                 <div className="absolute bottom-0 left-0 border-b-[20px] border-l-[20px] border-transparent border-b-black border-l-black"></div>
-
                 <div className="absolute bottom-0 right-0 border-b-[20px] border-r-[20px] border-transparent border-b-black border-r-black"></div>
               </div>
             </div>
