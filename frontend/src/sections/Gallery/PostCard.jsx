@@ -1,85 +1,86 @@
 import React, { useState, useEffect } from 'react';
 
 const mockPosts = [
-  {
-    id: "post1",
-    media_type: "IMAGE",
-    media_url: "https://via.placeholder.com/600x600.png?text=Instagram+Post+1",
-    caption:
-      "This is an amazing shot from our latest tech conference! #TechFluence #Innovation #FutureTech",
-    permalink: "https://instagram.com/p/mock-post-1",
-    name: "Tech Conference",
-    owner: "@techfluence",
-    price: "New Post",
-    bgColor: "rgba(20, 40, 60, 0.5)"
-  },
-  {
-    id: "post2",
-    media_type: "IMAGE",
-    media_url: "https://via.placeholder.com/600x600.png?text=Instagram+Post+2",
-    caption:
-      "Behind the scenes at our cyberpunk-themed photoshoot. The future is now! #CyberAesthetic #TechFluence #DigitalArt",
-    permalink: "https://instagram.com/p/mock-post-2",
-    name: "Cyberpunk Shoot",
-    owner: "@digitalartist",
-    price: "Trending",
-    bgColor: "rgba(40, 20, 60, 0.5)"
-  },
-  {
-    id: "post3",
-    media_type: "VIDEO",
-    media_url:
-      "https://instagram.com/p/mock-post-6",
-    caption:
-      "Check out this incredible demo of our new AR technology. #AugmentedReality #TechFluence #FutureTech",
-    permalink: "https://instagram.com/p/mock-post-3",
-    name: "AR Demo",
-    owner: "@futuretechs",
-    price: "Featured",
-    bgColor: "rgba(20, 60, 40, 0.5)"
-  },
-  {
-    id: "post4",
-    media_type: "IMAGE",
-    media_url: "https://via.placeholder.com/600x600.png?text=Instagram+Post+4",
-    caption:
-      "Retro-futuristic designs inspire our latest collection. What do you think? #RetroFuture #DigitalAesthetics #TechFluence",
-    permalink: "https://instagram.com/p/mock-post-4",
-    name: "Retro Future",
-    owner: "@retrodesigner",
-    price: "Popular",
-    bgColor: "rgba(60, 40, 20, 0.5)"
-  },
-  {
-    id: "post5",
-    media_type: "IMAGE",
-    media_url: "https://via.placeholder.com/600x600.png?text=Instagram+Post+5",
-    caption:
-      "The intersection of technology and art - our latest exhibition opens next week! #TechArt #DigitalGallery #TechFluence",
-    permalink: "https://instagram.com/p/mock-post-5",
-    name: "Tech Art",
-    owner: "@gallery",
-    price: "Exhibition",
-    bgColor: "rgba(40, 50, 70, 0.5)"
-  },
-  {
-    id: "post6",
-    media_type: "IMAGE",
-    media_url: "https://via.placeholder.com/600x600.png?text=Instagram+Post+6",
-    caption:
-      "Neon lights and digital dreams. Our new studio space is ready for creation! #NeonAesthetic #CreativeSpace #TechFluence",
-    permalink: "https://instagram.com/p/mock-post-6",
-    name: "Neon Dreams",
-    owner: "@studio",
-    price: "New Space",
-    bgColor: "rgba(70, 30, 90, 0.5)"
-  },
+  // {
+  //   id: "post1",
+  //   media_type: "IMAGE",
+  //   media_url: "https://via.placeholder.com/600x600.png?text=Instagram+Post+1",
+  //   caption:
+  //     "This is an amazing shot from our latest tech conference! #TechFluence #Innovation #FutureTech",
+  //   permalink: "https://instagram.com/p/mock-post-1",
+  //   name: "Tech Conference",
+  //   owner: "@techfluence",
+  //   price: "New Post",
+  //   bgColor: "rgba(20, 40, 60, 0.5)"
+  // },
+  // {
+  //   id: "post2",
+  //   media_type: "IMAGE",
+  //   media_url: "https://via.placeholder.com/600x600.png?text=Instagram+Post+2",
+  //   caption:
+  //     "Behind the scenes at our cyberpunk-themed photoshoot. The future is now! #CyberAesthetic #TechFluence #DigitalArt",
+  //   permalink: "https://instagram.com/p/mock-post-2",
+  //   name: "Cyberpunk Shoot",
+  //   owner: "@digitalartist",
+  //   price: "Trending",
+  //   bgColor: "rgba(40, 20, 60, 0.5)"
+  // },
+  // {
+  //   id: "post3",
+  //   media_type: "VIDEO",
+  //   media_url:
+  //     "https://instagram.com/p/mock-post-6",
+  //   caption:
+  //     "Check out this incredible demo of our new AR technology. #AugmentedReality #TechFluence #FutureTech",
+  //   permalink: "https://instagram.com/p/mock-post-3",
+  //   name: "AR Demo",
+  //   owner: "@futuretechs",
+  //   price: "Featured",
+  //   bgColor: "rgba(20, 60, 40, 0.5)"
+  // },
+  // {
+  //   id: "post4",
+  //   media_type: "IMAGE",
+  //   media_url: "https://via.placeholder.com/600x600.png?text=Instagram+Post+4",
+  //   caption:
+  //     "Retro-futuristic designs inspire our latest collection. What do you think? #RetroFuture #DigitalAesthetics #TechFluence",
+  //   permalink: "https://instagram.com/p/mock-post-4",
+  //   name: "Retro Future",
+  //   owner: "@retrodesigner",
+  //   price: "Popular",
+  //   bgColor: "rgba(60, 40, 20, 0.5)"
+  // },
+  // {
+  //   id: "post5",
+  //   media_type: "IMAGE",
+  //   media_url: "https://via.placeholder.com/600x600.png?text=Instagram+Post+5",
+  //   caption:
+  //     "The intersection of technology and art - our latest exhibition opens next week! #TechArt #DigitalGallery #TechFluence",
+  //   permalink: "https://instagram.com/p/mock-post-5",
+  //   name: "Tech Art",
+  //   owner: "@gallery",
+  //   price: "Exhibition",
+  //   bgColor: "rgba(40, 50, 70, 0.5)"
+  // },
+  // {
+  //   id: "post6",
+  //   media_type: "IMAGE",
+  //   media_url: "https://via.placeholder.com/600x600.png?text=Instagram+Post+6",
+  //   caption:
+  //     "Neon lights and digital dreams. Our new studio space is ready for creation! #NeonAesthetic #CreativeSpace #TechFluence",
+  //   permalink: "https://instagram.com/p/mock-post-6",
+  //   name: "Neon Dreams",
+  //   owner: "@studio",
+  //   price: "New Space",
+  //   bgColor: "rgba(70, 30, 90, 0.5)"
+  // },
 ];
 
 export default function NFTGrid() {
   const [posts, setPosts] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+  console.log(posts.length)
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -125,10 +126,10 @@ export default function NFTGrid() {
     )
   }
 
-  if (error && posts.length === 0) {
+  if (posts.length === 0) {
     return (
       <div className="bg-black min-h-screen p-6 flex justify-center items-center">
-        <div className="text-white font-mono">Error loading posts. Please try again later.</div>
+        <div className="text-white font-mono">NO POSTS YET. COMMING SOON!</div>
       </div>
     )
   }
