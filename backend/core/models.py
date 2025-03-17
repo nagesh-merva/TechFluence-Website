@@ -3,9 +3,10 @@ from django.db import models
 class InstagramMedia(models.Model):
     media_id = models.CharField(max_length=255, unique=True)
     media_type = models.CharField(max_length=50)
-    media_url = models.URLField()
+    media_url = models.URLField(default="")
     caption = models.TextField(blank=True, null=True)
     permalink = models.URLField()
+    imagetime = models.TextField(null=True)
     timestamp = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
