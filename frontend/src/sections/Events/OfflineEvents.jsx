@@ -11,7 +11,7 @@ export default function OfflineEvents() {
             title: "RETROTHON",
             image: "/events/hackathon.jpg",
             description: "Where Past Meets Future in Code! A 24-hour hackathon.",
-            prizes: ["₹25,00", "₹15,000"],
+            prizes: ["₹25,000", "₹15,000"],
             link: 'https://lu.ma/tekhk5ld'
         },
         {
