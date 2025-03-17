@@ -64,10 +64,10 @@ export default function OfflineEvents() {
         },
         {
             id: 8,
-            title: "Mind Matrix",
+            title: "Into The Mind Matrix",
             image: "/events/quiz.jpg",
             description: "Quiz competition featuring mind-bending questions and puzzles.",
-            prizes: ["₹3,500", "₹2,500", "₹1,500"],
+            prizes: ["₹4,000", "₹2,500", "₹1,000"],
             link: 'https://lu.ma/r0k9mysl'
         }
     ]

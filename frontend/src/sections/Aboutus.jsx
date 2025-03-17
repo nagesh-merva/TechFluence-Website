@@ -24,11 +24,11 @@ export default function Aboutus() {
       </div>
 
       {/* Content Container */}
-      <div className="relative z-10 mt-20 w-full flex flex-col md:flex-row items-center md:items-start px-4 sm:px-6 md:px-10 gap-10">
+      <div className="relative z-10 mt-20 w-full flex flex-col md:flex-row items-center px-4 sm:px-6 md:px-10 gap-10">
         {/* Left Side - Image */}
-        <div className="w-full md:w-5/12 flex justify-center md:justify-start">
+        <div className="w-full md:w-5/12 h-auto flex justify-center md:justify-start">
           <img
-            src="/main/logo.gif"
+            src="/main/WebsiteLogo.gif"
             alt="Techfluence Visual"
             className="h-full w-full rounded-2xl object-contain"
           />
@@ -53,12 +53,7 @@ export default function Aboutus() {
             by="word"
             className="text-creamy text-base sm:text-lg md:text-xl font-normal leading-relaxed"
           >
-            Techfluence is a celebration of cultures and technology, not just as
-            an institution, but as a country. It aims at instilling a sense of
-            belongingness by being a melting pot of ideas open to students of
-            all disciplines. With intriguing events and competitions along with
-            resourceful workshops by experts and professionals, Techfluence 25
-            is all set to be an enthralling experience for everyone involved.
+            TTechfluence 2025 is more than a tech fest—it is a dynamic fusion of cultures, ideas, and innovation, embodying the nation’s progressive spirit. Bringing together students from diverse fields, it fosters collaboration and a shared sense of purpose. By uniting creative minds, aspiring technologists, and industry leaders, Techfluence sparks innovation, challenges boundaries, and unlocks new possibilities.
           </TextAnimate>
 
           <TextAnimate
@@ -66,10 +61,7 @@ export default function Aboutus() {
             by="word"
             className="text-creamy font-popins mt-5 text-base sm:text-lg md:text-xl leading-relaxed"
           >
-            Techfluence is a celebration of cultures and technology, not just as
-            an institution, but as a country. It aims at instilling a sense of
-            belongingness by being a melting pot of ideas open to students of
-            all disciplines.
+            With thrilling competitions, interactive events, and expert-led workshops, Techfluence 2025 offers an enriching experience for all—whether you want to innovate, compete, or explore the latest tech trends.
           </TextAnimate>
 
           {/* Border Animation */}

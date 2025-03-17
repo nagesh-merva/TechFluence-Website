@@ -143,30 +143,32 @@ const ScrollVideoSection = () => {
             <>
               {/* Semi-transparent overlay for better button visibility */}
               <div className="absolute inset-0 bg-black bg-opacity-40 z-20"></div>
-              {/* Full size image overlay for vertical video */}
-              {/* Full size image overlay */}
+
+              {/* Full-size image overlay */}
               <div
-                className="absolute inset-0 w-full h-full bg-cover bg-center z-20"
+                className="absolute inset-0 w-full h-full bg-cover bg-center z-20 flex flex-col items-start justify-center text-left px-6 sm:px-12 md:px-24 pb-24"
                 style={{ backgroundImage: "url('/events/final5.png')" }}
               >
-                {/* Text overlay for EVENTS title, positioned to match the example image */}
-                <div className="absolute inset-0 flex flex-col justify-center px-12 md:px-24 pb-32">
-                  <h1 className="text-7xl md:text-8xl lg:text-9xl font-bold text-white tracking-wider">
-                    EVENTS
-                  </h1>
-                  <div className="h-0.5 bg-green-700 w-64 md:w-96 lg:w-[30rem] mt-2"></div>
-                  <h2 className="text-xl md:text-3xl font-light ml-2 text-white tracking-wider mt-2">
-                    TO THE FUTURE UNSEEN
-                  </h2>
-                </div>
+                {/* Text overlay for EVENTS */}
+                <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold text-white tracking-wider">
+                  EVENTS
+                </h1>
+
+                {/* Underline effect */}
+                <div className="h-1 sm:h-1.5 bg-green-700 w-40 sm:w-64 md:w-80 lg:w-[30rem] mt-2"></div>
+
+                {/* Subtitle text */}
+                <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-light text-white tracking-wider mt-2">
+                  TO THE FUTURE UNSEEN
+                </h2>
               </div>
 
-              {/* Replay button - position adjusted for rotation */}
+              {/* Replay button - Adjusted position for better responsiveness */}
               <button
                 onClick={replayVideo}
-                className="absolute bottom-8 left-8 sm:top-8 sm:right-8 sm:bottom-auto sm:left-auto md:bottom-8 md:left-8 md:top-auto md:right-auto bg-white bg-opacity-20 hover:bg-opacity-30 text-black p-4 rounded-full transition-all flex items-center gap-2 z-30"
+                className="absolute bottom-6 right-6 sm:bottom-8 sm:right-8 md:bottom-10 md:right-10 bg-white bg-opacity-20 hover:bg-opacity-30 text-black p-4 rounded-full transition-all flex items-center gap-2 z-30"
               >
-                {/* Fixed replay icon with explicit fill */}
+                {/* Replay icon */}
                 <svg
                   width="24"
                   height="24"
@@ -180,9 +182,10 @@ const ScrollVideoSection = () => {
                     fill="black"
                   />
                 </svg>
-                <span>Replay</span>
+                <span className="text-white text-sm sm:text-base">Replay</span>
               </button>
             </>
+
           )}
 
           {/* Sound toggle button - position adjusted for rotation */}
