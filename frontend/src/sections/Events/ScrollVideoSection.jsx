@@ -127,12 +127,12 @@ const ScrollVideoSection = () => {
           }`}
       >
         {/* Container for rotation to ensure all content rotates together */}
-        <div className="relative w-full h-fit sm:h-full transform rotate-0 sm:rotate-180 md:rotate-0">
+        <div className="relative w-full h-fit sm:h-full ">
           {/* Video element */}
           <video
             ref={videoRef}
-            className="w-full h-full object-cover"
-            src="/events/TF.mp4"
+            className="w-full h-full object-contain transform rotate-0 sm:-rotate-90 "
+            src="/main/mainvideo.mp4"
             playsInline
             autoPlay
             muted
