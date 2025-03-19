@@ -39,6 +39,12 @@ const WebsiteTeam = () => {
       name: "Sumeet Yadav",
       designation: "Graphic Designer & Video Editor",
     },
+
+    {
+      img: "/about/Parag.jpeg",
+      name: "Parag Das",
+      designation: "Graphic Designer & Video Editor",
+    },
   ];
   return (
     <div>
