@@ -12,7 +12,8 @@ export default function OfflineEvents() {
             image: "/events/hackathon.jpg",
             description: "Where Past Meets Future in Code! A 24-hour hackathon.",
             prizes: ["₹25,000", "₹15,000"],
-            link: 'https://lu.ma/tekhk5ld'
+            link: 'https://lu.ma/tekhk5ld',
+            closed: true
         },
         {
             id: 2,
@@ -20,7 +21,8 @@ export default function OfflineEvents() {
             image: "/events/robosoccer.jpg",
             description: "Robots clash in a retro-futuristic soccer showdown!",
             prizes: ["₹7,000", "₹5,000"],
-            link: 'https://lu.ma/4al3cihp'
+            link: 'https://lu.ma/4al3cihp',
+            closed: false
         },
         {
             id: 3,
@@ -28,7 +30,8 @@ export default function OfflineEvents() {
             image: "/events/codefun.jpg",
             description: "Code your way through a nostalgic arcade experience!",
             prizes: ["₹6,000", "₹4,000"],
-            link: 'https://lu.ma/9h5r41v3'
+            link: 'https://lu.ma/9h5r41v3',
+            closed: false
         },
         {
             id: 4,
@@ -36,7 +39,8 @@ export default function OfflineEvents() {
             image: "/events/competativeP.jpg",
             description: "A Competitive Coding Challenge to test your coding skills.",
             prizes: ["₹5,000", "₹3,000"],
-            link: 'https://lu.ma/ofo6o1en'
+            link: 'https://lu.ma/ofo6o1en',
+            closed: false
         },
         {
             id: 5,
@@ -44,7 +48,8 @@ export default function OfflineEvents() {
             image: "/events/uiux.jpg",
             description: "Step into the Chronoverse, where past meets future in an electrifying UI/UX challenge!",
             prizes: ["₹7,000", "₹4,000"],
-            link: 'https://lu.ma/rm45fabf'
+            link: 'https://lu.ma/rm45fabf',
+            closed: false
         },
         {
             id: 6,
@@ -52,7 +57,8 @@ export default function OfflineEvents() {
             image: "/events/sharktank.jpg",
             description: "Pitch your startup ideas to a panel of investors in a Shark Tank-style event.",
             prizes: ["₹5,000", "₹3,000"],
-            link: 'https://lu.ma/108q8gao'
+            link: 'https://lu.ma/108q8gao',
+            closed: false
         },
         {
             id: 7,
@@ -60,7 +66,8 @@ export default function OfflineEvents() {
             image: "/events/debate.jpg",
             description: "Engage in thought-provoking debates. Can you win the argument with the power of your words?",
             prizes: ["₹3,750", "₹2,750"],
-            link: 'https://lu.ma/vyo5knj6'
+            link: 'https://lu.ma/vyo5knj6',
+            closed: false
         },
         {
             id: 8,
@@ -68,7 +75,8 @@ export default function OfflineEvents() {
             image: "/events/quiz.jpg",
             description: "Quiz competition featuring mind-bending questions and puzzles.",
             prizes: ["₹4,000", "₹2,500", "₹1,000"],
-            link: 'https://lu.ma/r0k9mysl'
+            link: 'https://lu.ma/r0k9mysl',
+            closed: false
         }
     ]
 
@@ -171,11 +179,22 @@ export default function OfflineEvents() {
                     </div>
 
                     {events.map((event, index) => (
-                        <div key={event.id} className="flex flex-col md:flex-row items-center gap-4 md:gap-6 scale-[80%] sm:scale-100">
-                            <a href={event.link} target="_blank" className="relative">
+                        <div
+                            key={event.id}
+                            className={`flex flex-col md:flex-row items-center gap-4 md:gap-6 scale-[80%] sm:scale-100 ${event.closed ? 'opacity-60' : ''}`}
+                        >
+                            <a href={event.closed ? '#' : event.link} target={event.closed ? '' : '_blank'} className="relative">
                                 <div className="absolute top-2 left-2 z-30 bg-black/70 px-2 py-1 text-xs text-creamy font-mono">
                                     [{index.toString().padStart(3, '0')}]
                                 </div>
+
+                                {event.closed && (
+                                    <div className="absolute inset-0 flex items-center justify-center z-40 overflow-hidden">
+                                        <div className="bg-red-600/90 text-white font-bold text-2xl py-2 px-8 rotate-45 shadow-lg absolute w-[200%] text-center" style={{ top: '15%' }}>
+                                            CLOSED
+                                        </div>
+                                    </div>
+                                )}
 
                                 <ShineBorder
                                     borderWidth={4}
@@ -204,7 +223,11 @@ export default function OfflineEvents() {
                                     <div className="h-12 w-full bg-gradient-to-t from-purple-400 to-pink-600 opacity-70"></div>
                                 </div>
                             </a>
-                            <a href={event.link} target="_blank" className="w-[250px] sm:w-[250px] md:w-[220px] h-[350px] sm:h-[350px] md:h-[380px] bg-black/80 border border-gray-800 p-4 flex flex-col backdrop-blur-md">
+                            <a
+                                href={event.closed ? '#' : event.link}
+                                target={event.closed ? '' : '_blank'}
+                                className={`w-[250px] sm:w-[250px] md:w-[220px] h-[350px] sm:h-[350px] md:h-[380px] bg-black/80 border border-gray-800 p-4 flex flex-col backdrop-blur-md relative`}
+                            >
                                 <div className="border-b border-gray-700 pb-2 mb-3">
                                     <div className="text-xs text-gray-500 font-mono">[EVENTS NAME] {"{"}</div>
                                     <div className="flex items-center gap-2 ml-4">
@@ -236,6 +259,12 @@ export default function OfflineEvents() {
                                     </div>
                                     <div className="text-xs text-gray-500 font-mono">{"}"}</div>
                                 </div>
+
+                                {event.closed && (
+                                    <div className="absolute bottom-2 right-2 text-xs text-red-500 font-mono font-bold">
+                                        [STATUS: CLOSED]
+                                    </div>
+                                )}
                             </a>
                         </div>
                     ))}
