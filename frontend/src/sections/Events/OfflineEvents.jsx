@@ -49,7 +49,7 @@ export default function OfflineEvents() {
             description: "Step into the Chronoverse, where past meets future in an electrifying UI/UX challenge!",
             prizes: ["₹7,000", "₹4,000"],
             link: 'https://lu.ma/rm45fabf',
-            closed: false
+            closed: true
         },
         {
             id: 6,
@@ -58,7 +58,7 @@ export default function OfflineEvents() {
             description: "Pitch your startup ideas to a panel of investors in a Shark Tank-style event.",
             prizes: ["₹5,000", "₹3,000"],
             link: 'https://lu.ma/108q8gao',
-            closed: false
+            closed: true
         },
         {
             id: 7,

@@ -24,6 +24,7 @@ const RetroNavbar = ({ isOpen, onClose }) => {
     { id: '/events', label: 'EVENTS' },
     { id: '/results', label: 'RESULTS' },
     { id: '/gallery', label: 'GALLERY' },
+    { id: '/schedule', label: 'SCHEDULE' },
   ]
 
   const colors = {
