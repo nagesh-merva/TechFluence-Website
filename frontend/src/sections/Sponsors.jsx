@@ -39,7 +39,16 @@ const Sponsors = () => {
             />
           </div>
 
-          {/* Sponsor 4*/}
+          {/* Sponsor 4 */}
+          <div className="flex justify-center">
+            <img
+              src="/sponsors/eduadvise.jpg"
+              alt="EduAdvise logo"
+              className="object-contain w-44 h-44"
+            />
+          </div>
+
+          {/* Sponsor 5*/}
           <div className="flex justify-center">
             <img
               src="/sponsors/ITCG.png"
@@ -48,7 +57,7 @@ const Sponsors = () => {
             />
           </div>
 
-          {/* Sponsor 5 */}
+          {/* Sponsor 6 */}
           <div className="flex justify-center">
             <img
               src="/sponsors/creativecapsule.jpg"
@@ -56,7 +65,7 @@ const Sponsors = () => {
               className="object-contain w-44 h-44"
             />
           </div>
-          {/* Sponsor 6 */}
+          {/* Sponsor 7 */}
           <div className="flex justify-center">
             <img
               src="/sponsors/Ocean.png"
@@ -65,7 +74,7 @@ const Sponsors = () => {
             />
           </div>
 
-          {/* Sponsor 7 */}
+          {/* Sponsor 8 */}
           <div className="flex justify-center">
             <img
               src="/sponsors/SJ.png"
@@ -73,9 +82,6 @@ const Sponsors = () => {
               className="object-contain w-64 h-64"
             />
           </div>
-
-
-
         </div>
 
         {/* Special Thanks Section */}
